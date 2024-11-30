@@ -38,6 +38,8 @@ class FaqScreen extends StatelessWidget {
     },
   ];
 
+  FaqScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,11 +55,11 @@ class FaqScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             if (index == 0) {
               // Add a heading at the start of the list
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 16.0),
+              return const Padding(
+                padding: EdgeInsets.only(bottom: 16.0),
                 child: Text(
                   'Frequently Asked Questions',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
