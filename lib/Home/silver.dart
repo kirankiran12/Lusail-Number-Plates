@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vehicle_project/Home/home.dart';
 import 'package:vehicle_project/Home/popular.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
@@ -220,32 +221,15 @@ class _SilverState extends State<Silver> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, () {}),
-            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat', 1,
-                () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FaqScreen(),
-                ),
-              );
-            }),
-            _buildBottomNavItem(Icons.list, 'My List', 2, () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const CustomCardList(),
-                ),
-              );
-            }),
-            _buildBottomNavItem(Icons.person, 'Account', 3, () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const MyAccount(),
-                ),
-              );
-            }),
+            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat', 1, FaqScreen()),
+            const SizedBox(
+              width: 15,
+            ),
+            _buildBottomNavItem(
+                Icons.list, 'My List', 2, const CustomCardList()),
+            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
           ],
         ),
       ),
@@ -258,9 +242,11 @@ class _SilverState extends State<Silver> {
               gradient: LinearGradient(
                 colors: [
                   Colors.red,
-                  Color(0xff3A1D6F),
-                  Color.fromARGB(225, 49, 4, 160),
-                  Color(0xffAF121F),
+                  Color(0xFF3A1D6F),
+                  Color.fromARGB(255, 49, 4, 160),
+                  Color(0xFFAF121F),
+                  Colors.brown,
+                  Color(0xFFAF121F)
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -270,7 +256,7 @@ class _SilverState extends State<Silver> {
               padding: const EdgeInsets.all(4.0),
               child: CircleAvatar(
                 radius: 28,
-                backgroundColor: Colors.white,
+                backgroundColor: const Color(0xFFD9D9D9),
                 child: IconButton(
                   icon: const Icon(Icons.add, color: Colors.black),
                   onPressed: () {
@@ -285,7 +271,7 @@ class _SilverState extends State<Silver> {
               ),
             ),
           ),
-          const SizedBox(height: 4),
+          const SizedBox(height: 12),
           const Text(
             'Sell',
             style: TextStyle(color: Colors.black, fontSize: 18),
@@ -297,23 +283,24 @@ class _SilverState extends State<Silver> {
   }
 
   Widget _buildBottomNavItem(
-      IconData icon, String label, int index, Function onTap) {
+      IconData icon, String label, int index, Widget? page) {
     final isSelected = index == _currentIndex;
     return GestureDetector(
       onTap: () {
         setState(() {
-          _currentIndex = index;
+          var currentIndex = index;
         });
-        onTap();
+        if (page != null) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => page));
+        }
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            color: isSelected ? const Color(0xff300F1C) : Colors.black,
-          ),
+          Icon(icon,
+              color: isSelected ? const Color(0xff300F1C) : Colors.black),
           Text(
             label,
             style: TextStyle(
