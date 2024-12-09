@@ -248,45 +248,19 @@ class _DetailDescriptionState extends State<DetailDescription> {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        notchMargin: 6.0,
+        notchMargin: 0.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            InkWell(
-                onLongPress: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MyAccount(),
-                    )),
-                child: InkWell(
-                    onLongPress: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomePageScreen(),
-                        )),
-                    child: _buildBottomNavItem(Icons.home, 'Home', 0))),
-            InkWell(
-                onLongPress: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => FaqScreen(),
-                    )),
-                child: _buildBottomNavItem(
-                    Icons.chat_bubble_outline_outlined, 'Chat', 1)),
-            InkWell(
-                onLongPress: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const CustomCardList(),
-                    )),
-                child: _buildBottomNavItem(Icons.list, 'My List', 2)),
-            InkWell(
-                onLongPress: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MyAccount(),
-                    )),
-                child: _buildBottomNavItem(Icons.person, 'Account', 3)),
+            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat', 1, FaqScreen()),
+            const SizedBox(
+              width: 15,
+            ),
+            _buildBottomNavItem(
+                Icons.list, 'My List', 2, const CustomCardList()),
+            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
           ],
         ),
       ),
@@ -294,31 +268,41 @@ class _DetailDescriptionState extends State<DetailDescription> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-              decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: LinearGradient(colors: [
-                    Colors.red,
-                    Color(0xff3A1D6F),
-                    Color.fromARGB(225, 49, 4, 160),
-                    Color(0xffAF121F),
-                  ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
-              child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: CircleAvatar(
-                    radius: 28,
-                    backgroundColor: Colors.white,
-                    child: IconButton(
-                      icon: const Icon(Icons.add, color: Colors.black),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Popular(),
-                            ));
-                      },
-                    ),
-                  ))),
-          const SizedBox(height: 4),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                colors: [
+                  Colors.red,
+                  Color(0xFF3A1D6F),
+                  Color.fromARGB(255, 49, 4, 160),
+                  Color(0xFFAF121F),
+                  Colors.brown,
+                  Color(0xFFAF121F)
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: CircleAvatar(
+                radius: 28,
+                backgroundColor: const Color(0xFFD9D9D9),
+                child: IconButton(
+                  icon: const Icon(Icons.add, color: Colors.black),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Popular(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
           const Text(
             'Sell',
             style: TextStyle(color: Colors.black, fontSize: 18),
@@ -329,13 +313,18 @@ class _DetailDescriptionState extends State<DetailDescription> {
     );
   }
 
-  Widget _buildBottomNavItem(IconData icon, String label, int index) {
+  Widget _buildBottomNavItem(
+      IconData icon, String label, int index, Widget? page) {
     final isSelected = index == _currentIndex;
     return GestureDetector(
       onTap: () {
         setState(() {
-          _currentIndex = index;
+          var currentIndex = index;
         });
+        if (page != null) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => page));
+        }
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -346,7 +335,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
           Text(
             label,
             style: TextStyle(
-              color: isSelected ? const Color(0xff300F1C) : Colors.black,
+              color: isSelected ? const Color(0xff300F1C) : Colors.grey,
               fontSize: 12,
             ),
           ),
@@ -354,35 +343,35 @@ class _DetailDescriptionState extends State<DetailDescription> {
       ),
     );
   }
+}
 
-  Widget _buildDetailItem(String title, String value) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 18,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
+Widget _buildDetailItem(String title, String value) {
+  return Container(
+    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+    decoration: BoxDecoration(
+      color: Colors.grey.shade200,
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 18,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
           ),
-          Text(
-            value,
-            style: const TextStyle(
-              fontSize: 18,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
+        ),
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 18,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
