@@ -15,8 +15,6 @@
 //   File? _image;
 //   final _formKey = GlobalKey<FormState>();
 
-
-
 //    String selectedRole = '';
 //    // Initially no role is selected.
 // //role select
@@ -160,20 +158,6 @@
 // Container(
 // child: const RoleSelectorScreen()
 // ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //                     const SizedBox(height: 20),
 //                     ElevatedButton(
@@ -373,8 +357,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   return null;
                 }, obscureText: true),
                 const SizedBox(height: 10),
-                _buildTextField(
-                    'Confirm Password', Icons.lock_outline,
+                _buildTextField('Confirm Password', Icons.lock_outline,
                     _confirmPasswordController, (value) {
                   if (value == null || value.isEmpty) {
                     return 'Confirm your password';
@@ -386,60 +369,68 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 const SizedBox(height: 20),
 
                 // Role Selection Section
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    children: [
-                      const Text(
-                        "Select Your Role",
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: Colors.blue),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      const SizedBox(height: 10),
-                      GestureDetector(
-                        onTap: () => _selectRole('Buyer'),
-                        child: Text(
-                          'Buyer',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: selectedRole == 'Buyer'
-                                ? Colors.blue
-                                : Colors.black,
-                            fontWeight: selectedRole == 'Buyer'
-                                ? FontWeight.bold
-                                : FontWeight.normal,
+                      child: Column(
+                        children: [
+                          const Text(
+                            "Select Your Role",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      GestureDetector(
-                        onTap: () => _selectRole('Seller'),
-                        child: Text(
-                          'Seller',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: selectedRole == 'Seller'
-                                ? Colors.blue
-                                : Colors.black,
-                            fontWeight: selectedRole == 'Seller'
-                                ? FontWeight.bold
-                                : FontWeight.normal,
+                          const SizedBox(height: 10),
+                          GestureDetector(
+                            onTap: () => _selectRole('Buyer'),
+                            child: Text(
+                              'Buyer',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: selectedRole == 'Buyer'
+                                    ? Colors.blue
+                                    : Colors.black,
+                                fontWeight: selectedRole == 'Buyer'
+                                    ? FontWeight.bold
+                                    : FontWeight.normal,
+                              ),
+                            ),
                           ),
-                        ),
+                          const SizedBox(height: 10),
+                          GestureDetector(
+                            onTap: () => _selectRole('Seller'),
+                            child: Text(
+                              'Seller',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: selectedRole == 'Seller'
+                                    ? Colors.blue
+                                    : Colors.black,
+                                fontWeight: selectedRole == 'Seller'
+                                    ? FontWeight.bold
+                                    : FontWeight.normal,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            selectedRole.isEmpty
+                                ? 'Please select a role'
+                                : 'You selected: $selectedRole',
+                            style: const TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 10),
-                      Text(
-                        selectedRole.isEmpty
-                            ? 'Please select a role'
-                            : 'You selected: $selectedRole',
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
 
                 const SizedBox(height: 20),
