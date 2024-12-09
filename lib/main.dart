@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vehicle_project/Home/golden.dart';
 import 'package:vehicle_project/Home/home.dart';
 
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomePageScreen());
+        home: const Golden());
         
   }
 }

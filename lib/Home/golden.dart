@@ -97,6 +97,11 @@ class _GoldenState extends State<Golden> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
+                 Image.asset(
+                      'assets/images/logo.jpg',
+                      height: 70,
+                      width: 80,
+                    ),
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
