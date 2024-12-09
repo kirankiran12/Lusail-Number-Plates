@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vehicle_project/Auth/splashscreen.dart';
 import 'package:vehicle_project/Home/home.dart';
 
-import 'package:vehicle_project/dashboard.dart/dashboard_profile.dart';
 
 void main() {
   runApp(const MyApp());
