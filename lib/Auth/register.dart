@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:vehicle_project/Auth/loginscreen.dart';
+import 'package:vehicle_project/Auth/role_selecter.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -14,20 +15,35 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   File? _image;
   final _formKey = GlobalKey<FormState>();
 
+
+
+   String selectedRole = '';
+   // Initially no role is selected.
+//role select
+  void _selectRole(String role) {
+    setState(() {
+      selectedRole = role;
+    });}
+
   // Controllers
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _sellerController = TextEditingController();
+    final TextEditingController _buyerController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
 
   @override
   void dispose() {
+
     _firstNameController.dispose();
     _lastNameController.dispose();
     _emailController.dispose();
+     _sellerController.dispose();
+      _buyerController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     _phoneController.dispose();
@@ -140,6 +156,24 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       }
                       return null;
                     }, obscureText: true),
+
+Container(
+child: const RoleSelectorScreen()
+),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     const SizedBox(height: 20),
                     ElevatedButton(
