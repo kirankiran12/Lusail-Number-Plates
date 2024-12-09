@@ -71,7 +71,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
               const SizedBox(height: 16),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: TextField(
                   onChanged: _search,
                   decoration: InputDecoration(
@@ -107,73 +107,61 @@ class _HomePageScreenState extends State<HomePageScreen> {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        notchMargin: 1.0,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildBottomNavItem(Icons.home, 'Home', 0, () {}),
-              Spacer(),
-              _buildBottomNavItem(Icons.question_answer, 'FAQ', 1, () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FaqScreen(),
-                  ),
-                );
-              }),
-              Spacer(),
-              _buildBottomNavItem(Icons.list, 'My List', 2, () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CustomCardList(),
-                  ),
-                );
-              }),
-              Spacer(),
-              _buildBottomNavItem(Icons.person, 'Account', 3, () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const MyAccount(),
-                    ));
-              }),
-              Spacer()
-            ],
-          ),
+        notchMargin: 0.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat', 1, FaqScreen()),
+            const SizedBox(
+              width: 15,
+            ),
+            _buildBottomNavItem(
+                Icons.list, 'My List', 2, const CustomCardList()),
+            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
+          ],
         ),
       ),
       floatingActionButton: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-              decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: LinearGradient(colors: [
-                    Colors.red,
-                    Color(0xff3A1D6F),
-                    Color.fromARGB(225, 49, 4, 160),
-                    Color(0xffAF121F),
-                  ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
-              child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: CircleAvatar(
-                    radius: 28,
-                    backgroundColor: Colors.white,
-                    child: IconButton(
-                      icon: const Icon(Icons.add, color: Colors.black),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const Popular(),
-                            ));
-                      },
-                    ),
-                  ))),
-          const SizedBox(height: 4),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                colors: [
+                  Colors.red,
+                  Color(0xFF3A1D6F),
+                  Color.fromARGB(255, 49, 4, 160),
+                  Color(0xFFAF121F),
+                  Colors.brown,
+                  Color(0xFFAF121F)
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: CircleAvatar(
+                radius: 28,
+                backgroundColor: const Color(0xFFD9D9D9),
+                child: IconButton(
+                  icon: const Icon(Icons.add, color: Colors.black),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Popular(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
           const Text(
             'Sell',
             style: TextStyle(color: Colors.black, fontSize: 18),
@@ -185,14 +173,17 @@ class _HomePageScreenState extends State<HomePageScreen> {
   }
 
   Widget _buildBottomNavItem(
-      IconData icon, String label, int index, Function onTap) {
+      IconData icon, String label, int index, Widget? page) {
     final isSelected = index == _currentIndex;
     return GestureDetector(
       onTap: () {
         setState(() {
-          _currentIndex = index;
+          var currentIndex = index;
         });
-        onTap();
+        if (page != null) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => page));
+        }
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,

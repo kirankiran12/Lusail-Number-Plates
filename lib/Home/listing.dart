@@ -274,13 +274,16 @@ class _CustomCardListState extends State<CustomCardList> {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        notchMargin: 4.0,
+        notchMargin: 1.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
                 Icons.chat_bubble_outline_outlined, 'Chat', 1, FaqScreen()),
+            const SizedBox(
+              width: 15,
+            ),
             _buildBottomNavItem(
                 Icons.list, 'My List', 2, const CustomCardList()),
             _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
