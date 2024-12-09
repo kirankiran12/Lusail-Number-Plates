@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   image_picker: ^1.1.2
   pin_code_text_field: ^1.8.0
+  flutter_localization: ^0.2.2
+  provider: ^6.0.5
+  shared_preferences: ^2.2.0
 
 dev_dependencies:
   flutter_test:
