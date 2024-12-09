@@ -71,7 +71,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
               const SizedBox(height: 16),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: TextField(
                   onChanged: _search,
                   decoration: InputDecoration(
@@ -108,32 +108,41 @@ class _HomePageScreenState extends State<HomePageScreen> {
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
         notchMargin: 1.0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, () {}),
-            _buildBottomNavItem(Icons.question_answer, 'FAQ', 1, () {
-              Navigator.push(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildBottomNavItem(Icons.home, 'Home', 0, () {}),
+              Spacer(),
+              _buildBottomNavItem(Icons.question_answer, 'FAQ', 1, () {
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => FaqScreen(),
-                  ));
-            }),
-            _buildBottomNavItem(Icons.list, 'My List', 2, () {
-              Navigator.push(
+                  ),
+                );
+              }),
+              Spacer(),
+              _buildBottomNavItem(Icons.list, 'My List', 2, () {
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const CustomCardList(),
-                  ));
-            }),
-            _buildBottomNavItem(Icons.person, 'Account', 3, () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const MyAccount(),
-                  ));
-            }),
-          ],
+                  ),
+                );
+              }),
+              Spacer(),
+              _buildBottomNavItem(Icons.person, 'Account', 3, () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyAccount(),
+                    ));
+              }),
+              Spacer()
+            ],
+          ),
         ),
       ),
       floatingActionButton: Column(
