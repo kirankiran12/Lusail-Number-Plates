@@ -51,10 +51,9 @@ class FaqScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
-          itemCount: faqs.length + 1, // Add 1 for the heading widget
+          itemCount: faqs.length + 1,
           itemBuilder: (context, index) {
             if (index == 0) {
-              // Add a heading at the start of the list
               return const Padding(
                 padding: EdgeInsets.only(bottom: 16.0),
                 child: Text(
@@ -69,7 +68,7 @@ class FaqScreen extends StatelessWidget {
               );
             }
 
-            final faq = faqs[index - 1]; // Adjust for the heading
+            final faq = faqs[index - 1];
             return Card(
               color: const Color(0xFFCABA99),
               margin: const EdgeInsets.symmetric(vertical: 8),
