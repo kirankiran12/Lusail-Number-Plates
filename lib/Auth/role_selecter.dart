@@ -20,9 +20,7 @@ class _RoleSelectorScreenState extends State<RoleSelectorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Select Your Role'),
-      ),
+   
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
