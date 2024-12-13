@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vehicle_project/dashboard.dart/profile.dart';
 import 'package:vehicle_project/profileScreen/favorites.dart';
 import 'package:vehicle_project/Auth/loginscreen.dart';
@@ -7,8 +7,35 @@ import 'package:vehicle_project/profileScreen/orderscreen.dart';
 import 'package:vehicle_project/profileScreen/payments.dart';
 import 'package:vehicle_project/profileScreen/trash.dart';
 
-class MyAccount extends StatelessWidget {
+class MyAccount extends StatefulWidget {
   const MyAccount({super.key});
+
+  @override
+  _MyAccountState createState() => _MyAccountState();
+}
+
+class _MyAccountState extends State<MyAccount> {
+  String _selectedLanguage = 'English'; // Default selected language
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLanguage();
+  }
+
+  // Load the language preference from shared preferences
+  _loadLanguage() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _selectedLanguage = prefs.getString('language') ?? 'English';
+    });
+  }
+
+  // Save the language preference in shared preferences
+  _saveLanguage(String language) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('language', language);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +100,35 @@ class MyAccount extends StatelessWidget {
                       const SizedBox(
                         height: 0,
                       ),
+                      // Dropdown for selecting language (Urdu or Arabic)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: DropdownButton<String>(
+                          value: _selectedLanguage,
+                          icon: const Icon(Icons.arrow_drop_down),
+                          iconSize: 24,
+                          elevation: 16,
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              _selectedLanguage = newValue!;
+                            });
+                            _saveLanguage(
+                                newValue!); // Save the selected language
+                          },
+                          items: <String>['English', 'Arabic']
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                      const Divider(thickness: 1, color: Colors.black),
                       // Replaced onLongPress with onTap
                       InkWell(
                         onTap: () {
@@ -233,7 +289,6 @@ class MyAccount extends StatelessWidget {
         color: Colors.black,
         size: 20,
       ),
-      // Removed onTap here, it's handled by InkWell
     );
   }
 }

@@ -161,7 +161,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => FaqScreen(),
+                          builder: (context) => RealChat(),
                         ));
                   },
                   style: TextButton.styleFrom(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/Notifications.dart';
 import 'package:vehicle_project/Home/image_withcard.dart';
 import 'package:vehicle_project/Home/popular.dart';
@@ -6,6 +7,7 @@ import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
 import 'package:vehicle_project/Home/listing.dart';
+import 'package:vehicle_project/translate.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -17,6 +19,7 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   final int _currentIndex = 0;
   final bool _showMore = false;
+  bool _isCardVisible = false;
 
   // Sample data for search functionality
   final List<String> searchData = [
@@ -77,7 +80,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   onChanged: _search,
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.search),
-                    hintText: 'Search',
+                    hintText: 'Search'.tr,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
