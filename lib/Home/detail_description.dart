@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vehicle_project/Home/popular.dart';
+import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
 import 'package:vehicle_project/Home/home.dart';
@@ -13,7 +14,7 @@ class DetailDescription extends StatefulWidget {
 }
 
 class _DetailDescriptionState extends State<DetailDescription> {
-  int _currentIndex = 0;
+  final int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -254,7 +255,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
           children: [
             _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, FaqScreen()),
+                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
             const SizedBox(
               width: 15,
             ),

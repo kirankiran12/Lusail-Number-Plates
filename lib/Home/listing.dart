@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
 import 'package:vehicle_project/Home/home.dart';
@@ -280,7 +281,7 @@ class _CustomCardListState extends State<CustomCardList> {
           children: [
             _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, FaqScreen()),
+                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
             const SizedBox(
               width: 15,
             ),

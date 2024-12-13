@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vehicle_project/Home/popular.dart';
+import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/home.dart';
 
@@ -280,7 +281,7 @@ class _PaymentState extends State<Payment> {
           children: [
             _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, FaqScreen()),
+                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
             _buildBottomNavItem(Icons.list, 'My List', 2, null),
             _buildBottomNavItem(
               Icons.person,
