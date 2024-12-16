@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vehicle_project/Home/detail_description.dart';
 
 class CustomCardHome extends StatefulWidget {
@@ -9,11 +10,11 @@ class CustomCardHome extends StatefulWidget {
 }
 
 class _CustomCardHomeState extends State<CustomCardHome> {
-  final List<Map<String, String>> avatarData2 = const [
+  final List<Map<String, String>> avatarData2 = [
     {
-      'image': 'assets/images/qattar.jpg',
-      'name': 'Car Number Plate',
-      'price': '50,000 Q.T'
+      'image': 'assets/images/qattar.jpg'.tr,
+      'name': 'Car Number Plate'.tr,
+      'price': '50,000 Q.T'.tr,
     },
     {
       'image': 'assets/images/qattar.jpg',
@@ -66,11 +67,11 @@ class _CustomCardHomeState extends State<CustomCardHome> {
                                 fit: BoxFit.cover,
                               ),
                               // Dummy Text Overlay
-                              const Positioned(
+                              Positioned(
                                 left: 40,
                                 bottom: 10,
                                 child: Text(
-                                  '000000', // Replace with your dummy text
+                                  '000000'.tr, // Replace with your dummy text
                                   style: TextStyle(
                                     color: Colors
                                         .black, // Text color (white for visibility on dark images)
@@ -99,8 +100,8 @@ class _CustomCardHomeState extends State<CustomCardHome> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text(
-                              'Some Detail',
+                            Text(
+                              'Some Detail'.tr,
                               style:
                                   TextStyle(fontSize: 10, color: Colors.black),
                             ),
@@ -111,8 +112,8 @@ class _CustomCardHomeState extends State<CustomCardHome> {
                             ),
                           ],
                         ),
-                        const Text(
-                          'More Info',
+                        Text(
+                          'More Info'.tr,
                           style: TextStyle(fontSize: 10, color: Colors.black),
                         ),
                       ],

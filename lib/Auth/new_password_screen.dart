@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vehicle_project/Auth/loginscreen.dart';
 
 class Newpassword extends StatefulWidget {
@@ -44,9 +45,9 @@ class _NewpasswordState extends State<Newpassword> {
                 width: 200,
                 child: Image.asset('assets/images/logo.jpg'),
               ),
-              const Text(
-                'Create New Password',
-                style: TextStyle(fontSize: 20, color: Colors.black),
+              Text(
+                'إنشاء كلمة مرور جديدة'.tr, // Translated: "Create New Password"
+                style: const TextStyle(fontSize: 20, color: Colors.black),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
@@ -56,7 +57,8 @@ class _NewpasswordState extends State<Newpassword> {
                 obscuringCharacter: '.',
                 maxLength: 8,
                 decoration: InputDecoration(
-                  labelText: 'Enter New Password',
+                  labelText: 'أدخل كلمة المرور الجديدة'
+                      .tr, // Translated: "Enter New Password"
                   border: const OutlineInputBorder(),
                   counterText: '',
                   suffixIcon: IconButton(
@@ -80,7 +82,8 @@ class _NewpasswordState extends State<Newpassword> {
                 maxLength: 8,
                 decoration: InputDecoration(
                   fillColor: const Color(0xFFE3DAC9),
-                  labelText: 'Confirm Password',
+                  labelText:
+                      'تأكيد كلمة المرور'.tr, // Translated: "Confirm Password"
                   border: const OutlineInputBorder(),
                   counterText: '',
                   suffixIcon: IconButton(
@@ -96,31 +99,26 @@ class _NewpasswordState extends State<Newpassword> {
                   ),
                 ),
               ),
-              // const SizedBox(height: 20),
-              // ElevatedButton(
-              //   onPressed: () {
-              //     if (_formKey.currentState!.validate()) {
-              //       Navigator.push(
-              //         context,
-              //         MaterialPageRoute(
-              //           builder: (context) => LoginScreen(),
-              //         ),
-              //       );
-              //     }
-              //   },
-              //   style: ElevatedButton.styleFrom(
-              //     padding:
-              //         const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              //     backgroundColor: const Color(0xFFFDD51D),
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(10),
-              //     ),
-              //   ),
-              //   child: const Text(
-              //     'Change Password',
-              //     style: TextStyle(fontSize: 15),
-              //   ),
-              // ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    // You can add your logic for password change here
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  backgroundColor: const Color(0xFFFDD51D),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: Text(
+                  'تغيير كلمة المرور'.tr, // Translated: "Change Password"
+                  style: const TextStyle(fontSize: 15),
+                ),
+              ),
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
@@ -139,9 +137,9 @@ class _NewpasswordState extends State<Newpassword> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text(
-                  'Login',
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+                child: Text(
+                  'تسجيل الدخول'.tr, // Translated: "Login"
+                  style: const TextStyle(fontSize: 15, color: Colors.black),
                 ),
               ),
             ],

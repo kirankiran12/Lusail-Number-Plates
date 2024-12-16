@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RoleSelectorScreen extends StatefulWidget {
   const RoleSelectorScreen({super.key});
@@ -27,7 +28,7 @@ class _RoleSelectorScreenState extends State<RoleSelectorScreen> {
               _selectRole('Buyer');
             },
             child: Text(
-              'Buyer',
+              'Buyer'.tr, // Translated: "Buyer"
               style: TextStyle(
                 fontSize: 24,
                 color: selectedRole == 'Buyer' ? Colors.blue : Colors.black,
@@ -43,7 +44,7 @@ class _RoleSelectorScreenState extends State<RoleSelectorScreen> {
               _selectRole('Seller');
             },
             child: Text(
-              'Seller',
+              'Seller'.tr, // Translated: "Seller"
               style: TextStyle(
                 fontSize: 24,
                 color: selectedRole == 'Seller' ? Colors.blue : Colors.black,
@@ -57,7 +58,9 @@ class _RoleSelectorScreenState extends State<RoleSelectorScreen> {
           Text(
             selectedRole.isEmpty
                 ? 'Please select a role'
-                : 'You selected: $selectedRole',
+                    .tr // Translated: "Please select a role"
+                : 'You selected: $selectedRole'
+                    .tr, // Translated: "You selected: $selectedRole"
             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ],

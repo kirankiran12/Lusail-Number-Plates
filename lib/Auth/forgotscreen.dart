@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vehicle_project/Auth/otp_screen.dart';
 
 class Forgetscreen extends StatefulWidget {
@@ -40,7 +41,7 @@ class _ForgetscreenState extends State<Forgetscreen> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: const Color(0xFFE3DAC9),
-                    labelText: 'Email',
+                    labelText: 'Email'.tr, // Translation for "Email"
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -63,10 +64,12 @@ class _ForgetscreenState extends State<Forgetscreen> {
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your email';
+                      return 'Please enter your email'
+                          .tr; // Translation for "Please enter your email"
                     } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
                         .hasMatch(value)) {
-                      return 'Please enter a valid email address';
+                      return 'Please enter a valid email address'
+                          .tr; // Translation for "Please enter a valid email address"
                     }
                     return null;
                   },
@@ -87,9 +90,9 @@ class _ForgetscreenState extends State<Forgetscreen> {
                       );
                     }
                   },
-                  child: const Text(
-                    'Send OTP',
-                    style: TextStyle(color: Colors.black),
+                  child: Text(
+                    'Send OTP'.tr, // Translation for "Send OTP"
+                    style: const TextStyle(color: Colors.black),
                   ),
                 ),
               ],

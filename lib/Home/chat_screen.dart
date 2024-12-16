@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FaqScreen extends StatelessWidget {
   // FAQ data
   final List<Map<String, String>> faqs = [
     {
-      'question': 'Do I need an account to buy or sell number plates?',
-      'answer': 'Yes, an account is required to buy or sell number plates.',
+      'question': 'Do I need an account to buy or sell number plates?'.tr,
+      'answer': 'Yes, an account is required to buy or sell number plates.'.tr,
     },
     {
       'question': 'How can I list my number plate for sale?',
@@ -45,7 +46,7 @@ class FaqScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFCABA99),
       appBar: AppBar(
-        title: const Text('FAQ'),
+        title: Text('FAQ'.tr), // Translated: "FAQ"
         backgroundColor: const Color(0xFF5053D5),
       ),
       body: Padding(
@@ -54,11 +55,12 @@ class FaqScreen extends StatelessWidget {
           itemCount: faqs.length + 1,
           itemBuilder: (context, index) {
             if (index == 0) {
-              return const Padding(
-                padding: EdgeInsets.only(bottom: 16.0),
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 16.0),
                 child: Text(
-                  'Frequently Asked Questions',
-                  style: TextStyle(
+                  'Frequently Asked Questions'
+                      .tr, // Translated: "Frequently Asked Questions"
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -77,7 +79,7 @@ class FaqScreen extends StatelessWidget {
               ),
               child: ExpansionTile(
                 title: Text(
-                  faq['question']!,
+                  faq['question']!.tr, // Translated question
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -87,7 +89,7 @@ class FaqScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Text(
-                      faq['answer']!,
+                      faq['answer']!.tr, // Translated answer
                       style:
                           const TextStyle(fontSize: 14, color: Colors.blueGrey),
                     ),

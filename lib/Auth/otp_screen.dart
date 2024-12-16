@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 import 'package:vehicle_project/Auth/new_password_screen.dart';
 
@@ -25,13 +26,10 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
       backgroundColor: const Color(0xffCABA99),
       body: Center(
         child: SingleChildScrollView(
-          // Wrap Column in SingleChildScrollView
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               SizedBox(
                 height: 200,
                 width: 200,
@@ -52,17 +50,20 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const Text(
-                            'OTP Verification',
-                            style: TextStyle(
+                          Text(
+                            'OTP Verification'
+                                .tr, // Translated: "OTP Verification"
+                            style: const TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           const SizedBox(height: 10),
-                          const Text(
-                            'Please enter the 4-digit OTP sent to your email.',
-                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          Text(
+                            'Please enter the 4-digit OTP sent to your email.'
+                                .tr, // Translated: "Please enter the 4-digit OTP sent to your email."
+                            style: const TextStyle(
+                                fontSize: 16, color: Colors.black),
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 10),
@@ -90,7 +91,8 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(
-                                    'OTP Verified: $otp',
+                                    'OTP Verified: $otp'
+                                        .tr, // Translated: "OTP Verified"
                                   ),
                                 ),
                               );
@@ -102,7 +104,9 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(
-                                      'OTP Entered: ${otpController.text}'),
+                                    'OTP Entered: ${otpController.text}'
+                                        .tr, // Translated: "OTP Entered"
+                                  ),
                                 ),
                               );
                             },
@@ -114,10 +118,10 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child: const Text(
-                              "Verify OTP",
-                              style:
-                                  TextStyle(fontSize: 18, color: Colors.black),
+                            child: Text(
+                              "Verify OTP".tr, // Translated: "Verify OTP"
+                              style: const TextStyle(
+                                  fontSize: 18, color: Colors.black),
                             ),
                           ),
                           const SizedBox(height: 10),
@@ -138,10 +142,11 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child: const Text(
-                              'Create new password',
-                              style:
-                                  TextStyle(fontSize: 18, color: Colors.black),
+                            child: Text(
+                              'Create new password'
+                                  .tr, // Translated: "Create new password"
+                              style: const TextStyle(
+                                  fontSize: 18, color: Colors.black),
                             ),
                           ),
                         ],

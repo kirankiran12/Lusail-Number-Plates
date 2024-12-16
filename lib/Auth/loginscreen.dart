@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vehicle_project/Auth/forgotscreen.dart';
 import 'package:vehicle_project/Auth/register.dart';
 import 'package:vehicle_project/Auth/welcome_screen.dart';
@@ -70,16 +71,15 @@ class _LoginScreenState extends State<LoginScreen>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 80,
+                const SizedBox(height: 80),
+                Text(
+                  'جاهز للشراء أو بيع اللوحة الفريدة، املأ النموذج أدناه للبدء'
+                      .tr, // Translated: "Ready to buy or sell unique plate, fill the form below to get started"
+                  style: const TextStyle(
+                      fontSize: 17, fontWeight: FontWeight.bold),
                 ),
-                const Text(
-                  '"Ready to buy or sell unique plate fill the form below to get started"',
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 0,
-                ),
+                const SizedBox(height: 0),
+
                 // Animated Logo
                 ScaleTransition(
                   scale: _logoScaleAnimation,
@@ -96,14 +96,16 @@ class _LoginScreenState extends State<LoginScreen>
                   position: _textFieldSlideAnimation,
                   child: CustomTextField(
                     controller: emailController,
-                    label: 'Email',
+                    label: 'البريد الإلكتروني'.tr, // Translated: "Email"
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your email';
+                        return 'يرجى إدخال بريدك الإلكتروني'
+                            .tr; // Translated: "Please enter your email"
                       }
                       if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                        return 'Please enter a valid email';
+                        return 'يرجى إدخال بريد إلكتروني صالح'
+                            .tr; // Translated: "Please enter a valid email"
                       }
                       return null;
                     },
@@ -116,14 +118,16 @@ class _LoginScreenState extends State<LoginScreen>
                   position: _textFieldSlideAnimation,
                   child: CustomTextField(
                     controller: passwordController,
-                    label: 'Password',
+                    label: 'كلمة المرور'.tr, // Translated: "Password"
                     isPassword: true,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your password';
+                        return 'يرجى إدخال كلمة المرور الخاصة بك'
+                            .tr; // Translated: "Please enter your password"
                       }
                       if (value.length < 6) {
-                        return 'Password must be at least 6 characters';
+                        return 'يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل'
+                            .tr; // Translated: "Password must be at least 6 characters"
                       }
                       return null;
                     },
@@ -174,9 +178,9 @@ class _LoginScreenState extends State<LoginScreen>
                                     2.0, // Optional: Adjust the thickness of the progress bar
                               ),
                             )
-                          : const Text(
-                              'Login',
-                              style: TextStyle(color: Colors.black),
+                          : Text(
+                              'تسجيل الدخول'.tr, // Translated: "Login"
+                              style: const TextStyle(color: Colors.black),
                             ),
                     ),
                   ),
@@ -186,7 +190,8 @@ class _LoginScreenState extends State<LoginScreen>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an account?"),
+                    Text('ليس لديك حساب؟'
+                        .tr), // Translated: "Don't have an account?"
                     TextButton(
                       onPressed: () {
                         Navigator.pushReplacement(
@@ -196,9 +201,9 @@ class _LoginScreenState extends State<LoginScreen>
                           ),
                         );
                       },
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(
+                      child: Text(
+                        'تسجيل'.tr, // Translated: "Register"
+                        style: const TextStyle(
                           color: Color(0xFF5053D5),
                         ),
                       ),
@@ -215,9 +220,9 @@ class _LoginScreenState extends State<LoginScreen>
                       ),
                     );
                   },
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(
+                  child: Text(
+                    'هل نسيت كلمة المرور؟'.tr, // Translated: "Forgot Password?"
+                    style: const TextStyle(
                       color: Color(0xFF5053D5),
                     ),
                   ),

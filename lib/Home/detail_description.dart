@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vehicle_project/Home/popular.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
@@ -77,8 +78,8 @@ class _DetailDescriptionState extends State<DetailDescription> {
                   child: Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    child: const Text(
-                      '000000',
+                    child: Text(
+                      '000000'.tr,
                       style: TextStyle(
                         color: Colors.black, // Text color
                         fontSize: 16, // Font size
@@ -90,30 +91,31 @@ class _DetailDescriptionState extends State<DetailDescription> {
               ],
             ),
             const SizedBox(height: 16),
-            const Text(
-              '50,000 Q.T',
-              style: TextStyle(
+            Text(
+              '50,000 Q.T'.tr, // Translated: "50,000 Q.T"
+              style: const TextStyle(
                 fontSize: 24,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 8),
-            const Text(
-              'Sports car | Number plate',
-              style: TextStyle(
+            Text(
+              'Sports car | Number plate'.tr.tr,
+              style: const TextStyle(
                 fontSize: 18,
                 color: Colors.black,
               ),
             ),
             const SizedBox(height: 8),
-            const Row(
+            Row(
               children: [
-                Icon(Icons.location_on, color: Colors.black),
-                SizedBox(width: 8),
+                const Icon(Icons.location_on, color: Colors.black),
+                const SizedBox(width: 8),
                 Text(
-                  'Bahawalpur, Punjab, Pakistan',
-                  style: TextStyle(
+                  'Bahawalpur, Punjab, Pakistan'.tr,
+                  // Translated: "Bahawalpur, Punjab, Pakistan"
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.black,
                   ),
@@ -125,32 +127,33 @@ class _DetailDescriptionState extends State<DetailDescription> {
               thickness: 1,
             ),
             const SizedBox(height: 8),
-            const Text(
-              'Details',
-              style: TextStyle(
+            Text(
+              'Details'.tr, // Translated: "Details"
+              style: const TextStyle(
                 fontSize: 20,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 8),
-            _buildDetailItem('Plate Number:', '195700'),
+            _buildDetailItem('Plate Number:'.tr, '195700'),
             const SizedBox(height: 10),
-            _buildDetailItem('Owner Name:', 'Haroon Rasheed'),
+            _buildDetailItem('Owner Name:'.tr, 'Haroon Rasheed'),
             const SizedBox(height: 10),
-            _buildDetailItem('Price:', '50,000 Q.T'),
+            _buildDetailItem('Price:'.tr, '50,000 Q.T'),
             const SizedBox(height: 10),
-            const Text(
-              'Description',
-              style: TextStyle(
+            Text(
+              'Description'.tr, // Translated: "Description"
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
             const SizedBox(height: 5),
-            const Text(
-              "I am selling this my Qatar number plate because I don't need it anymore. Please help me and buy this number plate.",
+            Text(
+              "I am selling this my Qatar number plate because I don't need it anymore. Please help me and buy this number plate."
+                  .tr, // Translated description
             ),
             const SizedBox(height: 20),
             Row(
@@ -170,9 +173,9 @@ class _DetailDescriptionState extends State<DetailDescription> {
                     foregroundColor: Colors.black,
                     side: const BorderSide(color: Colors.black, width: 2),
                   ),
-                  child: const Text(
-                    'Contact Seller',
-                    style: TextStyle(fontSize: 16),
+                  child: Text(
+                    'Contact Seller'.tr, // Translated: "Contact Seller"
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -183,9 +186,9 @@ class _DetailDescriptionState extends State<DetailDescription> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 12, horizontal: 20),
                   ),
-                  child: const Text(
-                    'Book Now',
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  child: Text(
+                    'Book Now'.tr, // Translated: "Book Now"
+                    style: const TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ),
               ],
@@ -193,27 +196,28 @@ class _DetailDescriptionState extends State<DetailDescription> {
             const SizedBox(
               height: 5,
             ),
-            const Text(
-              'Listed by Private User:',
-              style: TextStyle(
+            Text(
+              'Listed by Private User:'
+                  .tr, // Translated: "Listed by Private User:"
+              style: const TextStyle(
                 fontSize: 18,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 10),
-            const Row(
+            Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 30,
                   backgroundImage: NetworkImage(
                       'https://cdn-icons-png.flaticon.com/128/13716/13716552.png'),
                 ),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Haroon Rasheed',
                       style: TextStyle(
                         fontSize: 16,
@@ -221,24 +225,24 @@ class _DetailDescriptionState extends State<DetailDescription> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 4),
-                    Text(
+                    const SizedBox(height: 4),
+                    const Text(
                       'Joined in January 2023',
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 2,
                     ),
                     Row(children: [
-                      Text(
+                      const Text(
                         'View Profile   ',
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
-                      Icon(Icons.arrow_forward_ios_sharp)
+                      const Icon(Icons.arrow_forward_ios_sharp)
                     ])
                   ],
                 ),
@@ -253,15 +257,17 @@ class _DetailDescriptionState extends State<DetailDescription> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
             const SizedBox(
               width: 15,
             ),
             _buildBottomNavItem(
-                Icons.list, 'My List', 2, const CustomCardList()),
-            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
+                Icons.list, 'My List'.tr, 2, const CustomCardList()),
+            _buildBottomNavItem(
+                Icons.person, 'Account'.tr, 3, const MyAccount()),
           ],
         ),
       ),
@@ -357,7 +363,7 @@ Widget _buildDetailItem(String title, String value) {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          title,
+          title.tr, // Translated: title
           style: const TextStyle(
             fontSize: 18,
             color: Colors.black,

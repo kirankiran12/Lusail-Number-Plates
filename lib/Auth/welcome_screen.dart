@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vehicle_project/Home/home.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -93,8 +94,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     .animate(_animationController),
                 child: FadeTransition(
                   opacity: _fadeAnimation,
-                  child: const Text(
-                    'Welcome',
+                  child: Text(
+                    'Welcome'.tr,
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
