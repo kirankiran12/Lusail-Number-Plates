@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:vehicle_project/Home/request.dart';
+import 'package:get/get.dart';
 
 class Popular extends StatefulWidget {
   const Popular({super.key});
@@ -64,9 +65,7 @@ class _PopularState extends State<Popular> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 30,
-              ),
+              const SizedBox(height: 30),
               Row(
                 children: [
                   IconButton(
@@ -80,9 +79,9 @@ class _PopularState extends State<Popular> {
                     },
                   ),
                   const SizedBox(width: 10),
-                  const Text(
-                    'Back',
-                    style: TextStyle(
+                  Text(
+                    'Back'.tr,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
@@ -93,27 +92,27 @@ class _PopularState extends State<Popular> {
                 height: 10,
                 color: Colors.black,
               ),
-              const Row(
+              Row(
                 children: [
-                  SizedBox(width: 16),
-                  CircleAvatar(
+                  const SizedBox(width: 16),
+                  const CircleAvatar(
                     radius: 30,
                     backgroundImage: AssetImage('assets/images/car2.jpg'),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Cars',
-                        style: TextStyle(
+                        'Cars'.tr,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
                       ),
                       Text(
-                        'Number Plates',
-                        style: TextStyle(
+                        'Number Plates'.tr,
+                        style: const TextStyle(
                           fontSize: 14,
                         ),
                       ),
@@ -139,10 +138,10 @@ class _PopularState extends State<Popular> {
                               backgroundColor: const Color(0xFF978C74),
                               foregroundColor: Colors.white,
                             ),
-                            child: const Text(
-                              "Choose Image",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 10),
+                            child: Text(
+                              "Choose Image".tr,
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 10),
                             ),
                           ),
                         )
@@ -157,69 +156,15 @@ class _PopularState extends State<Popular> {
                 ),
               ),
               const SizedBox(height: 20),
-              const Row(
+              _buildFormField(
+                  'Title'.tr, _titleController, 'Please enter a title'.tr),
+              _buildFormField('Plate Number'.tr, _platenoController,
+                  'Please enter a plate number'.tr),
+              Row(
                 children: [
                   SizedBox(width: 20),
                   Text(
-                    'Title',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _titleController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a title';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              const Row(
-                children: [
-                  SizedBox(width: 20),
-                  Text(
-                    'Plate Number',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _platenoController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a plate number';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              const Row(
-                children: [
-                  SizedBox(width: 20),
-                  Text(
-                    'Issue Date',
+                    'Issue Date'.tr,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -229,192 +174,22 @@ class _PopularState extends State<Popular> {
               ),
               Row(
                 children: [
-                  Container(
-                    margin: const EdgeInsets.only(left: 0),
-                    width: 100,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: TextFormField(
-                        controller: _ddController,
-                        decoration: const InputDecoration(
-                          labelText: 'dd',
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
-                          ),
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter dd';
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ),
+                  _buildDateField(_ddController, 'dd'.tr),
                   const SizedBox(width: 20),
-                  SizedBox(
-                    width: 100,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: TextFormField(
-                        controller: _mmController,
-                        decoration: const InputDecoration(
-                          labelText: 'MM',
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
-                          ),
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter MM';
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ),
+                  _buildDateField(_mmController, 'MM'.tr),
                   const SizedBox(width: 20),
-                  SizedBox(
-                    width: 100,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: TextFormField(
-                        controller: _yyyyController,
-                        decoration: const InputDecoration(
-                          labelText: 'YYYY',
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
-                          ),
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter YYYY';
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ),
+                  _buildDateField(_yyyyController, 'YYYY'.tr),
                 ],
               ),
-              const Row(
-                children: [
-                  SizedBox(width: 20),
-                  Text(
-                    'Plate Number2',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _platenumber2Controller,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a second plate number';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              const Row(
-                children: [
-                  SizedBox(width: 20),
-                  Text(
-                    'Location',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _locationController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a location';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              const Row(
-                children: [
-                  SizedBox(width: 20),
-                  Text(
-                    'Price',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _priceController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a price';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              const Row(
-                children: [
-                  SizedBox(width: 20),
-                  Text(
-                    'Description',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  controller: _descriptionController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                    ),
-                  ),
-                  maxLines: 10,
-                  minLines: 5,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a description';
-                    }
-                    return null;
-                  },
-                ),
-              ),
+              _buildFormField('Plate Number2'.tr, _platenumber2Controller,
+                  'Please enter a second plate number'.tr),
+              _buildFormField('Location'.tr, _locationController,
+                  'Please enter a location'.tr),
+              _buildFormField(
+                  'Price'.tr, _priceController, 'Please enter a price'.tr),
+              _buildFormField('Description'.tr, _descriptionController,
+                  'Please enter a description'.tr,
+                  maxLines: 5, minLines: 3),
               const SizedBox(height: 20),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -423,7 +198,6 @@ class _PopularState extends State<Popular> {
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    print('Form is valid');
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -432,10 +206,75 @@ class _PopularState extends State<Popular> {
                     );
                   }
                 },
-                child: const Text('Post Now'),
+                child: Text('Post Now'.tr),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFormField(
+      String label, TextEditingController controller, String errorMsg,
+      {int maxLines = 1, int minLines = 1}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const SizedBox(width: 20),
+              Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+          TextFormField(
+            controller: controller,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.black),
+              ),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return errorMsg;
+              }
+              return null;
+            },
+            maxLines: maxLines,
+            minLines: minLines,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDateField(TextEditingController controller, String hint) {
+    return SizedBox(
+      width: 100,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: TextFormField(
+          controller: controller,
+          decoration: InputDecoration(
+            labelText: hint.tr,
+            border: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black),
+            ),
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter $hint'.tr.tr;
+            }
+            return null;
+          },
         ),
       ),
     );

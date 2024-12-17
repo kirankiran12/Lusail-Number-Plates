@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
@@ -29,7 +30,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFD3B88C),
       appBar: AppBar(
-        title: const Text('Basic Information'),
+        title: Text('Basic Information'.tr),
         centerTitle: true,
         backgroundColor: const Color(0xFFD3B88C),
       ),
@@ -64,7 +65,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                 children: [
                                   ListTile(
                                     leading: const Icon(Icons.photo_library),
-                                    title: const Text('Gallery'),
+                                    title: Text('Gallery'.tr),
                                     onTap: () {
                                       Navigator.pop(context);
                                       _pickImage(ImageSource.gallery);
@@ -72,7 +73,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                                   ),
                                   ListTile(
                                     leading: const Icon(Icons.camera_alt),
-                                    title: const Text('Camera'),
+                                    title: Text('Camera'.tr),
                                     onTap: () {
                                       Navigator.pop(context);
                                       _pickImage(ImageSource.camera);
@@ -102,42 +103,42 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
-                'Enter Your Name',
+              Text(
+                'Enter Your Name'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Enter Your Name',
+                  hintText: 'Enter Your Name'.tr,
                 ),
               ),
               const SizedBox(height: 15),
-              const Text(
-                'Something About You',
+              Text(
+                'Something About You'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 maxLines: 3,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Write something about yourself',
+                  hintText: 'Write something about yourself'.tr,
                 ),
               ),
               const SizedBox(height: 15),
-              const Text(
-                'Gender',
+              Text(
+                'Gender'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               DropdownButtonFormField<String>(
-                value: 'Prefer Not to Say',
+                value: 'Prefer Not to Say'.tr,
                 items: [
-                  'Male',
-                  'Female',
-                  'Prefer Not to Say',
+                  'Male'.tr,
+                  'Female'.tr,
+                  'Prefer Not to Say'.tr,
                 ]
                     .map((gender) => DropdownMenuItem<String>(
                           value: gender,
@@ -152,54 +153,54 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 ),
               ),
               const SizedBox(height: 15),
-              const Text(
-                'Date of Birth',
+              Text(
+                'Date of Birth'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'DD/MM/YYYY',
+                  hintText: 'DD/MM/YYYY'.tr,
                 ),
               ),
               const SizedBox(height: 15),
-              const Text(
-                'Phone Number',
+              Text(
+                'Phone Number'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 keyboardType: TextInputType.phone,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Enter your phone number',
+                  hintText: 'Enter your phone number'.tr,
                 ),
               ),
               const SizedBox(height: 15),
-              const Text(
-                'Email',
+              Text(
+                'Email'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Enter your email',
+                  hintText: 'Enter your email'.tr,
                 ),
               ),
               const SizedBox(height: 15),
-              const Text(
-                'Bank Account',
+              Text(
+                'Bank Account'.tr,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 obscureText: true,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Enter your bank account',
+                  hintText: 'Enter your bank account'.tr,
                 ),
               ),
               const SizedBox(height: 20),
@@ -211,11 +212,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
                   ),
-                  child: const Padding(
+                  child: Padding(
                     padding:
                         EdgeInsets.symmetric(vertical: 12.0, horizontal: 30.0),
                     child: Text(
-                      'Save',
+                      'Save'.tr,
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

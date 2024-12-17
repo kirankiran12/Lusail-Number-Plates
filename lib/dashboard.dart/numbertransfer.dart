@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class NumberScreen extends StatefulWidget {
   const NumberScreen({super.key});
@@ -9,10 +10,10 @@ class NumberScreen extends StatefulWidget {
 
 class _NumberScreenState extends State<NumberScreen> {
   final List<String> cardTitles = [
-    'New Orders',
-    'In Progress',
-    'Number Transferred',
-    'Total Transferred',
+    'New Orders'.tr,
+    'In Progress'.tr,
+    'Number Transferred'.tr,
+    'Total Transferred'.tr,
   ];
 
   final List<String> cardPrices = [
@@ -74,8 +75,8 @@ class _NumberScreenState extends State<NumberScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xffCABA99),
-        title: const Text(
-          'Number Transfer',
+        title: Text(
+          'Number Transfer'.tr,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         actions: [
@@ -105,7 +106,7 @@ class _NumberScreenState extends State<NumberScreen> {
                 controller: searchController,
                 onChanged: _filterSearchResults,
                 decoration: InputDecoration(
-                  hintText: 'Search...',
+                  hintText: 'Search...'.tr,
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),

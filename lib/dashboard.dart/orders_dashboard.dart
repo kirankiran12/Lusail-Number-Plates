@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
@@ -9,9 +10,9 @@ class OrderScreen extends StatefulWidget {
 
 class _OrderScreenState extends State<OrderScreen> {
   final List<String> cardTitles = [
-    'Accepted',
+    'Accepted'.tr,
     'Rejected',
-    'Pending',
+    'Pending'.tr,
   ];
 
   final List<String> cardPrices = [
@@ -89,7 +90,7 @@ class _OrderScreenState extends State<OrderScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xffCABA99),
-        title: const Text(
+        title: Text(
           'Orders',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
@@ -120,7 +121,7 @@ class _OrderScreenState extends State<OrderScreen> {
                 controller: searchController,
                 onChanged: _filterSearchResults,
                 decoration: InputDecoration(
-                  hintText: 'Search...',
+                  hintText: 'Search...'.tr,
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
@@ -196,48 +197,48 @@ class _OrderScreenState extends State<OrderScreen> {
               ),
               padding:
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   // The text fields in the header row
                   Expanded(
                     child: Text(
-                      'UserId',
+                      'UserId'.tr,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
-                      'Picture',
+                      'Picture'.tr,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
-                      'Name',
+                      'Name'.tr,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
-                      'Email',
+                      'Email'.tr,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
-                      '   Edit',
+                      '   Edit'.tr,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
-                      '  Delete',
+                      '  Delete'.tr,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                     ),
@@ -275,7 +276,7 @@ class _OrderScreenState extends State<OrderScreen> {
                           // User ID
                           Expanded(
                             child: Text(
-                              item['UserID']!,
+                              item['UserID']!.tr,
                               style: const TextStyle(
                                 fontWeight: FontWeight.normal,
                                 fontSize: 12,
@@ -297,7 +298,7 @@ class _OrderScreenState extends State<OrderScreen> {
                           // User Name
                           Expanded(
                             child: Text(
-                              item['UserName']!,
+                              item['UserName']!.tr,
                               style: const TextStyle(
                                 fontWeight: FontWeight.normal,
                                 fontSize: 12,
@@ -307,7 +308,7 @@ class _OrderScreenState extends State<OrderScreen> {
                           // User Email
                           Expanded(
                             child: Text(
-                              item['Email']!,
+                              item['Email']!.tr,
                               style: const TextStyle(
                                 fontWeight: FontWeight.normal,
                                 fontSize: 12,
@@ -358,8 +359,8 @@ class _OrderScreenState extends State<OrderScreen> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 5, vertical: 12),
                 ),
-                child: const Text(
-                  'Load More',
+                child: Text(
+                  'Load More'.tr,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),

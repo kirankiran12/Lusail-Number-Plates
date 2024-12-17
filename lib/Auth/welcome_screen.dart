@@ -124,8 +124,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               // Animated Fade-in Text for the message with faster speed
               FadeTransition(
                 opacity: _fadeAnimation,
-                child: const Text(
-                  '"Welcome to Lusail Numbers - Your gateway to exclusive car plates in Qatar!"',
+                child: Text(
+                  '"Welcome to Lusail Numbers - Your gateway to exclusive car plates in Qatar!"'
+                      .tr,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,

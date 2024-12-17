@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/dashboard.dart/orders_dashboard.dart';
 import 'package:vehicle_project/dashboard.dart/payment_dashboard.dart';
 import 'package:vehicle_project/dashboard.dart/product.dart';
@@ -14,10 +15,10 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   final List<String> cardTitles = [
-    'Total Orders',
-    'Total Sales',
-    'Listed Items',
-    'Pending \nPayments',
+    'Total Orders'.tr,
+    'Total Sales'.tr,
+    'Listed Items'.tr,
+    'Pending \nPayments'.tr,
   ];
 
   final List<String> cardPrices = [
@@ -66,8 +67,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xffCABA99),
-        title: const Text(
-          'Dashboard',
+        title: Text(
+          'Dashboard'.tr,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         actions: [
@@ -110,11 +111,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                   // Text on top of the image
-                  const Positioned(
+                  Positioned(
                     top: 100,
                     left: 60,
                     child: Text(
-                      'Menu',
+                      'Menu'.tr,
                       style: TextStyle(
                         color: Colors.black, // Change text color for visibility
                         fontSize: 22,
@@ -129,7 +130,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               leading: const Icon(
                 Icons.home,
               ),
-              title: const Text('Dashboard'),
+              title: Text('Dashboard'.tr),
               onTap: () {
                 Navigator.push(
                     context,
@@ -140,7 +141,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.money_off_csred_rounded),
-              title: const Text('Orders'),
+              title: Text('Orders'.tr),
               onTap: () {
                 Navigator.push(
                     context,
@@ -151,7 +152,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.money),
-              title: const Text('Product'),
+              title: Text('Product'.tr),
               onTap: () {
                 Navigator.push(
                     context,
@@ -162,7 +163,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.person_3),
-              title: const Text('Users'),
+              title: Text('Users'.tr),
               onTap: () {
                 Navigator.push(
                     context,
@@ -173,7 +174,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.money_off_outlined),
-              title: const Text('Payments'),
+              title: Text('Payments'.tr),
               onTap: () {
                 Navigator.push(
                     context,
@@ -184,7 +185,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.logout),
-              title: const Text('Logout'),
+              title: Text('Logout'.tr),
               onTap: () {
                 Navigator.push(
                     context,
@@ -201,12 +202,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
           children: [
             // Search Bar
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(16.0),
               child: TextField(
                 controller: searchController,
                 onChanged: _filterSearchResults,
                 decoration: InputDecoration(
-                  hintText: 'Search...',
+                  hintText: 'Search...'.tr,
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),

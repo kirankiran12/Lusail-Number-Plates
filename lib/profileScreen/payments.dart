@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/popular.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
@@ -15,14 +16,14 @@ class Payment extends StatefulWidget {
 
 class _PaymentState extends State<Payment> {
   int _currentIndex = 0;
-  String status = 'Select Status';
+  String status = 'Select Status'.tr;
   Color statusColor = Colors.black;
 
   final List<String> cardTitles = [
-    'Revenue',
-    'Total Sales',
-    'Listed Items',
-    'Pending \nPayments',
+    'Revenue'.tr,
+    'Total Sales'.tr,
+    'Listed Items'.tr,
+    'Pending \nPayments'.tr,
   ];
 
   final List<String> cardPrices = [
@@ -38,7 +39,7 @@ class _PaymentState extends State<Payment> {
       backgroundColor: const Color(0xffCABA99),
       appBar: AppBar(
         backgroundColor: const Color(0xffCABA99),
-        title: const Text('Payments'),
+        title: Text('Payments'.tr),
         elevation: 0,
       ),
       body: Center(
@@ -108,13 +109,13 @@ class _PaymentState extends State<Payment> {
               const Divider(
                 color: Colors.black,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 5.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      'Payment History',
+                      'Payment History'.tr,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -153,11 +154,11 @@ class _PaymentState extends State<Payment> {
                               ),
                             ),
                             const SizedBox(width: 16),
-                            const Column(
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Private Plate 195700',
+                                  'Private Plate 195700'.tr,
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
@@ -165,7 +166,7 @@ class _PaymentState extends State<Payment> {
                                 ),
                                 SizedBox(height: 30),
                                 Text(
-                                  'Monday, 11 November \n2024(GMT-5)',
+                                  'Monday, 11 November \n2024(GMT-5)'.tr,
                                   style: TextStyle(
                                     fontSize: 10,
                                     fontWeight: FontWeight.w600,
@@ -175,11 +176,11 @@ class _PaymentState extends State<Payment> {
                             ),
                           ],
                         ),
-                        const Positioned(
+                        Positioned(
                           top: 20,
                           left: 95,
                           child: Text(
-                            'Sold',
+                            'Sold'.tr,
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -187,11 +188,11 @@ class _PaymentState extends State<Payment> {
                             ),
                           ),
                         ),
-                        const Positioned(
+                        Positioned(
                           top: 35,
                           left: 95,
                           child: Text(
-                            '50,000 Q.T',
+                            '50,000 Q.T'.tr,
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -209,12 +210,12 @@ class _PaymentState extends State<Payment> {
                                 builder: (context) {
                                   return AlertDialog(
                                     backgroundColor: const Color(0xffCABA99),
-                                    title: const Text('Select Status'),
+                                    title: Text('Select Status'.tr),
                                     content: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         ListTile(
-                                          title: const Text('Paid'),
+                                          title: Text('Paid'.tr),
                                           onTap: () {
                                             setState(() {
                                               status = 'Paid';
@@ -224,7 +225,7 @@ class _PaymentState extends State<Payment> {
                                           },
                                         ),
                                         ListTile(
-                                          title: const Text('Unpaid'),
+                                          title: Text('Unpaid'.tr),
                                           onTap: () {
                                             setState(() {
                                               status = 'Unpaid';
@@ -234,7 +235,7 @@ class _PaymentState extends State<Payment> {
                                           },
                                         ),
                                         ListTile(
-                                          title: const Text('Pending'),
+                                          title: Text('Pending'.tr),
                                           onTap: () {
                                             setState(() {
                                               status = 'Pending';
@@ -249,7 +250,7 @@ class _PaymentState extends State<Payment> {
                                 },
                               );
                             },
-                            child: const Text('Success'),
+                            child: Text('Success'.tr),
                           ),
                         ),
                         Positioned(
@@ -279,13 +280,14 @@ class _PaymentState extends State<Payment> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
-            _buildBottomNavItem(Icons.list, 'My List', 2, null),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
+            _buildBottomNavItem(Icons.list, 'My List'.tr, 2, null),
             _buildBottomNavItem(
               Icons.person,
-              'Account',
+              'Account'.tr,
               3,
               const MyAccount(),
             ),
@@ -322,8 +324,8 @@ class _PaymentState extends State<Payment> {
                 ),
               )),
           const SizedBox(height: 12),
-          const Text(
-            'Sell',
+          Text(
+            'Sell'.tr,
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],

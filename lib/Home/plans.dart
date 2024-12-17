@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class PlanScreen extends StatefulWidget {
   const PlanScreen({super.key});
@@ -14,13 +15,15 @@ class _PlanScreenState extends State<PlanScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Subscription'),
-        content: Text('You selected the $plan plan.'),
+        title: Text('subscription_title'.tr),
+        content: Text('subscription_message'.trParams({'plan': plan})),
         actions: [
           TextButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Color(0xffFFD200)),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xffFFD200),
+            ),
             onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
+            child: Text('ok'.tr),
           ),
         ],
       ),
@@ -30,23 +33,32 @@ class _PlanScreenState extends State<PlanScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffCABA99),
+      backgroundColor: const Color(0xffffCABA99),
       appBar: AppBar(
-        backgroundColor: Color(0xffffCABA99),
-        title: const Text('Subscription Plans'),
+        backgroundColor: const Color(0xffffCABA99),
+        title: Text('subscription_plans'.tr),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            _buildPlanCard('Monthly Plan', '\$10/month',
-                () => _onSubscribe('Monthly Plan')),
-            const SizedBox(height: 16),
-            _buildPlanCard('6 Months Plan', '\$50/6 months',
-                () => _onSubscribe('6 Months Plan')),
+            _buildPlanCard(
+              'monthly_plan_title'.tr,
+              'monthly_plan_price'.tr,
+              () => _onSubscribe('monthly_plan_title'.tr),
+            ),
             const SizedBox(height: 16),
             _buildPlanCard(
-                'Yearly Plan', '\$90/year', () => _onSubscribe('Yearly Plan')),
+              'six_months_plan_title'.tr,
+              'six_months_plan_price'.tr,
+              () => _onSubscribe('six_months_plan_title'.tr),
+            ),
+            const SizedBox(height: 16),
+            _buildPlanCard(
+              'yearly_plan_title'.tr,
+              'yearly_plan_price'.tr,
+              () => _onSubscribe('yearly_plan_title'.tr),
+            ),
           ],
         ),
       ),
@@ -84,9 +96,10 @@ class _PlanScreenState extends State<PlanScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xffFFD200)),
+                  backgroundColor: const Color(0xffFFD200),
+                ),
                 onPressed: onSubscribe,
-                child: const Text('Subscribe'),
+                child: Text('subscribe'.tr),
               ),
             ),
           ],

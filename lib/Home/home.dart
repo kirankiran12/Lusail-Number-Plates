@@ -7,7 +7,7 @@ import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
 import 'package:vehicle_project/Home/listing.dart';
-import 'package:vehicle_project/translate.dart';
+import 'package:vehicle_project/profileScreen/translate.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -23,10 +23,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
 
   // Sample data for search functionality
   final List<String> searchData = [
-    'Normal',
-    'Vip',
-    'Gold',
-    'Silver',
+    'Normal'.tr,
+    'Vip'.tr,
+    'Gold'.tr,
+    'Silver'.tr,
   ];
   List<String> searchResults = [];
 
@@ -115,15 +115,17 @@ class _HomePageScreenState extends State<HomePageScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
             const SizedBox(
               width: 15,
             ),
             _buildBottomNavItem(
-                Icons.list, 'My List', 2, const CustomCardList()),
-            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
+                Icons.list, 'My List'.tr, 2, const CustomCardList()),
+            _buildBottomNavItem(
+                Icons.person, 'Account'.tr, 3, const MyAccount()),
           ],
         ),
       ),
@@ -166,8 +168,8 @@ class _HomePageScreenState extends State<HomePageScreen> {
             ),
           ),
           const SizedBox(height: 12),
-          const Text(
-            'Sell',
+          Text(
+            'Sell'.tr,
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],

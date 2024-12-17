@@ -7,8 +7,9 @@ import 'package:vehicle_project/Home/detail_description.dart';
 import 'package:vehicle_project/Home/home.dart';
 import 'package:vehicle_project/Home/plans.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
+import 'package:vehicle_project/dashboard.dart/dashboard_profile.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
-import 'package:vehicle_project/translate.dart';
+import 'package:vehicle_project/profileScreen/translate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: DetailDescription());
+        home: DashboardScreen());
   }
 }

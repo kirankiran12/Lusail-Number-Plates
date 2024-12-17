@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/home.dart';
 import 'package:vehicle_project/Home/popular.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
@@ -21,27 +22,27 @@ class _VIPState extends State<VIP> {
   final List<Map<String, String>> _allAvatarData = [
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 1',
+      'name': 'Product 1'.tr,
       'price': '\$10.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 2',
+      'name': 'Product 2'.tr,
       'price': '\$15.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 3',
+      'name': 'Product 3'.tr,
       'price': '\$20.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 4',
+      'name': 'Product 4'.tr,
       'price': '\$25.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 5',
+      'name': 'Product 5'.tr,
       'price': '\$30.00',
     },
     {
@@ -92,7 +93,7 @@ class _VIPState extends State<VIP> {
       backgroundColor: const Color(0xffCABA99),
       appBar: AppBar(
         backgroundColor: const Color(0xffCABA99),
-        title: const Text('VIP Category'),
+        title: Text('Vip Category'.tr),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -148,8 +149,8 @@ class _VIPState extends State<VIP> {
                                           child: Container(
                                             padding: const EdgeInsets.symmetric(
                                                 horizontal: 8, vertical: 4),
-                                            child: const Text(
-                                              '000000',
+                                            child: Text(
+                                              '000000'.tr,
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 16,
@@ -178,8 +179,8 @@ class _VIPState extends State<VIP> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      const Text(
-                                        'Some Detail',
+                                      Text(
+                                        'Some Detail'.tr,
                                         style: TextStyle(
                                             fontSize: 10, color: Colors.black),
                                       ),
@@ -190,8 +191,8 @@ class _VIPState extends State<VIP> {
                                       ),
                                     ],
                                   ),
-                                  const Text(
-                                    'More Info',
+                                  Text(
+                                    'More Info'.tr,
                                     style: TextStyle(
                                         fontSize: 10, color: Colors.black),
                                   ),
@@ -207,7 +208,7 @@ class _VIPState extends State<VIP> {
               ),
               ElevatedButton(
                 onPressed: _loadMoreProducts,
-                child: Text(_isExpanded ? 'Show Less' : 'Load More'),
+                child: Text(_isExpanded ? 'Show Less'.tr : 'Load More'.tr),
               ),
               const SizedBox(
                 height: 40,
@@ -222,15 +223,17 @@ class _VIPState extends State<VIP> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
             const SizedBox(
               width: 15,
             ),
             _buildBottomNavItem(
-                Icons.list, 'My List', 2, const CustomCardList()),
-            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
+                Icons.list, 'My List'.tr, 2, const CustomCardList()),
+            _buildBottomNavItem(
+                Icons.person, 'Account'.tr, 3, const MyAccount()),
           ],
         ),
       ),
@@ -273,8 +276,8 @@ class _VIPState extends State<VIP> {
             ),
           ),
           const SizedBox(height: 12),
-          const Text(
-            'Sell',
+          Text(
+            'Sell'.tr,
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],

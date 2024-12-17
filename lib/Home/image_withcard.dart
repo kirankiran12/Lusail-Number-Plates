@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/custom_card_home.dart';
 import 'package:vehicle_project/Home/golden.dart';
 import 'package:vehicle_project/Home/normal.dart';
@@ -13,11 +15,19 @@ class ImageWithTextOverlay extends StatefulWidget {
 }
 
 class _ImageWithTextOverlayState extends State<ImageWithTextOverlay> {
-  final List<Map<String, String>> avatarData = const [
-    {'image': 'assets/images/normal.png', 'name': 'Normal', 'route': 'normal'},
-    {'image': 'assets/images/silver.png', 'name': 'Silver', 'route': 'silver'},
-    {'image': 'assets/images/gold.png', 'name': 'Gold', 'route': 'gold'},
-    {'image': 'assets/images/vip.png', 'name': 'VIP', 'route': 'vip'},
+  final List<Map<String, String>> avatarData = [
+    {
+      'image': 'assets/images/normal.png',
+      'name': 'Normal'.tr,
+      'route': 'normal'
+    },
+    {
+      'image': 'assets/images/silver.png',
+      'name': 'Silver'.tr,
+      'route': 'silver'
+    },
+    {'image': 'assets/images/gold.png', 'name': 'Gold'.tr, 'route': 'gold'},
+    {'image': 'assets/images/vip.png', 'name': 'Vip'.tr, 'route': 'vip'},
   ];
 
   // Sample data for products to be displayed
@@ -48,12 +58,12 @@ class _ImageWithTextOverlayState extends State<ImageWithTextOverlay> {
               ),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: 20,
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Browse Category',
+                'Browse Category'.tr,
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
@@ -131,7 +141,7 @@ class _ImageWithTextOverlayState extends State<ImageWithTextOverlay> {
               ),
             ),
           ),
-          const SizedBox(
+          SizedBox(
             height: 20,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,7 +149,7 @@ class _ImageWithTextOverlayState extends State<ImageWithTextOverlay> {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'All Products',
+                    'All Products'.tr,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -159,7 +169,7 @@ class _ImageWithTextOverlayState extends State<ImageWithTextOverlay> {
                 _showMore = !_showMore;
               });
             },
-            child: Text(_showMore ? 'Show Less' : 'Load More'),
+            child: Text(_showMore ? 'Show Less'.tr : 'Load More'.tr),
           ),
           const SizedBox(
             height: 30,

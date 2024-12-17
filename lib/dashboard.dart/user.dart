@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class User extends StatefulWidget {
   const User({super.key});
@@ -89,8 +90,8 @@ class _UserState extends State<User> {
                     Navigator.pop(context);
                   },
                 ),
-                const Text(
-                  'Users',
+                Text(
+                  'Users'.tr,
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -120,8 +121,8 @@ class _UserState extends State<User> {
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
-                labelText: 'Search',
-                hintText: 'Search by Owner Name or ID',
+                labelText: 'Search'.tr,
+                hintText: 'Search by Owner Name or ID'.tr,
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30.0),
@@ -143,42 +144,42 @@ class _UserState extends State<User> {
             ),
             padding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Text(
-                    'UserId',
+                    'UserId'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    'Picture',
+                    'Picture'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    'Name',
+                    'Name'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    'Email',
+                    'Email'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    '     Edit',
+                    '     Edit'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    '     Delete',
+                    '     Delete'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
@@ -210,7 +211,7 @@ class _UserState extends State<User> {
                       children: [
                         Expanded(
                             child: Text(
-                          item['UserID']!,
+                          item['UserID']!.tr,
                           style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 10),
                         )),
@@ -227,13 +228,13 @@ class _UserState extends State<User> {
                         ),
                         Expanded(
                             child: Text(
-                          item['UserName']!,
+                          item['UserName']!.tr,
                           style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 10),
                         )),
                         Expanded(
                             child: Text(
-                          item['Email']!,
+                          item['Email']!.tr,
                           style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 10),
                         )),
@@ -277,8 +278,8 @@ class _UserState extends State<User> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               ),
-              child: const Text(
-                "Learn more",
+              child: Text(
+                "Learn more".tr,
                 style: TextStyle(fontSize: 12),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
@@ -17,21 +18,21 @@ class _CustomCardListState extends State<CustomCardList> {
   List<Map<String, String>> items = [
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Car No Plate",
+      "title": "Car No Plate".tr,
       "noplate": "500000Q.T",
-      "cartype": "SportCar"
+      "cartype": "SportCar".tr
     },
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Luxury Ride",
+      "title": "Luxury Ride".tr,
       "noplate": "700000Q.T",
-      "cartype": "Sedan"
+      "cartype": "Sedan".tr
     },
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Car No Plate",
+      "title": "Car No Plate".tr,
       "noplate": "500000Q.T",
-      "cartype": "SportCar"
+      "cartype": "SportCar".tr
     },
   ];
 
@@ -47,8 +48,8 @@ class _CustomCardListState extends State<CustomCardList> {
             ),
             Container(
               alignment: Alignment.topLeft,
-              child: const Text(
-                '   My Listing',
+              child: Text(
+                '   My Listing'.tr,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -70,8 +71,8 @@ class _CustomCardListState extends State<CustomCardList> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 ),
-                child: const Text(
-                  "All lists ",
+                child: Text(
+                  "All lists ".tr,
                   style: TextStyle(color: Colors.white, fontSize: 12),
                 ),
               ),
@@ -155,7 +156,8 @@ class _CustomCardListState extends State<CustomCardList> {
                                       ]),
                                       const SizedBox(height: 0),
                                       Text(
-                                        "No Plate: ${items[index]["noplate"]}",
+                                        "No Plate: ${items[index]["noplate"]}"
+                                            .tr,
                                         style: const TextStyle(
                                             fontSize: 13,
                                             color: Colors.black,
@@ -163,7 +165,8 @@ class _CustomCardListState extends State<CustomCardList> {
                                       ),
                                       const SizedBox(height: 10),
                                       Text(
-                                        "Car Type: ${items[index]["cartype"]}",
+                                        "Car Type: ${items[index]["cartype"]}"
+                                            .tr,
                                         style: const TextStyle(
                                             fontSize: 13,
                                             color: Colors.black,
@@ -178,7 +181,7 @@ class _CustomCardListState extends State<CustomCardList> {
                         ),
                         Container(
                           padding: const EdgeInsets.symmetric(vertical: 0.0),
-                          child: const Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Row(
@@ -190,7 +193,7 @@ class _CustomCardListState extends State<CustomCardList> {
                                   ),
                                   SizedBox(width: 4),
                                   Text(
-                                    '108 views',
+                                    '108 views'.tr,
                                     style: TextStyle(fontSize: 12),
                                   ),
                                 ],
@@ -204,13 +207,13 @@ class _CustomCardListState extends State<CustomCardList> {
                                   ),
                                   SizedBox(width: 4),
                                   Text(
-                                    '7 leads',
+                                    '7 leads'.tr,
                                     style: TextStyle(fontSize: 12),
                                   ),
                                 ],
                               ),
                               Text(
-                                'Pending',
+                                'Pending'.tr,
                                 style:
                                     TextStyle(fontSize: 12, color: Colors.red),
                               ),
@@ -252,8 +255,8 @@ class _CustomCardListState extends State<CustomCardList> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
                                 ),
-                                child: const Text(
-                                  "Delete",
+                                child: Text(
+                                  "Delete".tr,
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 12),
                                 ),
@@ -279,15 +282,17 @@ class _CustomCardListState extends State<CustomCardList> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
             const SizedBox(
               width: 15,
             ),
             _buildBottomNavItem(
-                Icons.list, 'My List', 2, const CustomCardList()),
-            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
+                Icons.list, 'My List'.tr, 2, const CustomCardList()),
+            _buildBottomNavItem(
+                Icons.person, 'Account'.tr, 3, const MyAccount()),
           ],
         ),
       ),
@@ -330,8 +335,8 @@ class _CustomCardListState extends State<CustomCardList> {
             ),
           ),
           const SizedBox(height: 12),
-          const Text(
-            'Sell',
+          Text(
+            'Sell'.tr,
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],

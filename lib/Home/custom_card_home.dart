@@ -18,13 +18,13 @@ class _CustomCardHomeState extends State<CustomCardHome> {
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Car Number Plate',
-      'price': '50,000 Q.T'
+      'name': 'Car Number Plate'.tr,
+      'price': '50,000 Q.T'.tr,
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Car Number Plate',
-      'price': '50,000 Q.T'
+      'name': 'Car Number Plate'.tr,
+      'price': '50,000 Q.T'.tr
     },
   ];
   @override

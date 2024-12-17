@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
 import 'package:vehicle_project/Home/plans.dart';
 
@@ -16,7 +17,7 @@ class _RealChatState extends State<RealChat> {
       backgroundColor: Color(0xffffCABA99),
       appBar: AppBar(
         backgroundColor: Color(0xffffCABA99),
-        title: const Text('Chat Screen'),
+        title: Text('Chat Screen'.tr),
         actions: [
           IconButton(
             icon: const Icon(Icons.info),
@@ -45,7 +46,7 @@ class _RealChatState extends State<RealChat> {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              ChatDetailPage(user: 'User ${index + 1}'),
+                              ChatDetailPage(user: 'User ${index + 1}'.tr),
                         ),
                       ),
                       child: Container(
@@ -61,7 +62,7 @@ class _RealChatState extends State<RealChat> {
                               radius: 25.0,
                               backgroundColor: Color(0xffFFD200),
                               child: Text(
-                                'U${index + 1}',
+                                'U${index + 1}'.tr,
                                 style: const TextStyle(color: Colors.white),
                               ),
                             ),
@@ -71,7 +72,7 @@ class _RealChatState extends State<RealChat> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'User ${index + 1}',
+                                    'User ${index + 1}'.tr,
                                     style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16.0,
@@ -79,7 +80,8 @@ class _RealChatState extends State<RealChat> {
                                   ),
                                   const SizedBox(height: 5.0),
                                   Text(
-                                    'This is a sample message for User ${index + 1}',
+                                    'This is a sample message for User ${index + 1}'
+                                        .tr,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(color: Colors.grey[600]),
@@ -107,13 +109,14 @@ class _RealChatState extends State<RealChat> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('$featureName Feature'),
-        content: const Text(
-            'This feature is available only for premium users. Upgrade to access.'),
+        title: Text('$featureName Feature'.tr),
+        content: Text(
+            'This feature is available only for premium users. Upgrade to access.'
+                .tr),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text('Cancel'.tr),
           ),
           ElevatedButton(
             onPressed: () {
@@ -123,7 +126,7 @@ class _RealChatState extends State<RealChat> {
                     builder: (context) => PlanScreen(),
                   ));
             },
-            child: const Text('Upgrade'),
+            child: Text('Upgrade'.tr),
           ),
         ],
       ),
@@ -147,13 +150,13 @@ class ChatDetailPage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.video_call),
             onPressed: () {
-              _showFeatureDialog(context, 'Video Call');
+              _showFeatureDialog(context, 'Video Call'.tr);
             },
           ),
           IconButton(
             icon: const Icon(Icons.call),
             onPressed: () {
-              _showFeatureDialog(context, 'Audio Call');
+              _showFeatureDialog(context, 'Audio Call'.tr);
             },
           ),
         ],
@@ -163,8 +166,8 @@ class ChatDetailPage extends StatelessWidget {
           Expanded(
             child: ListView(
               padding: const EdgeInsets.all(10.0),
-              children: const [
-                Text('Chat messages will appear here...'),
+              children: [
+                Text('Chat messages will appear here...'.tr),
               ],
             ),
           ),
@@ -178,7 +181,7 @@ class ChatDetailPage extends StatelessWidget {
                     decoration: InputDecoration(
                       fillColor: Color(0xfffCABA99),
                       filled: true,
-                      hintText: 'Type your message...',
+                      hintText: 'Type your message...'.tr,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -195,7 +198,7 @@ class ChatDetailPage extends StatelessWidget {
                   child: IconButton(
                     icon: const Icon(Icons.send, color: Colors.black),
                     onPressed: () {
-                      _showFeatureDialog(context, 'Send Message');
+                      _showFeatureDialog(context, 'Send Message'.tr);
                     },
                   ),
                 ),
@@ -211,13 +214,14 @@ class ChatDetailPage extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('$featureName Feature'),
-        content: const Text(
-            'This feature is available only for premium users. Upgrade to access.'),
+        title: Text('$featureName Feature'.tr),
+        content: Text(
+            'This feature is available only for premium users. Upgrade to access.'
+                .tr),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text('Cancel'.tr),
           ),
           ElevatedButton(
             onPressed: () {
@@ -228,7 +232,7 @@ class ChatDetailPage extends StatelessWidget {
                   ));
               // Handle upgrade logic here
             },
-            child: const Text('Upgrade'),
+            child: Text('Upgrade'.tr),
           ),
         ],
       ),

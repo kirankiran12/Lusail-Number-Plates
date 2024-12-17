@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/home.dart';
 import 'package:vehicle_project/Home/popular.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
@@ -21,27 +23,27 @@ class _NormalState extends State<Normal> {
   final List<Map<String, String>> _allAvatarData = [
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 1',
+      'name': 'Product 1'.tr,
       'price': '\$10.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 2',
+      'name': 'Product 2'.tr,
       'price': '\$15.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 3',
+      'name': 'Product 3'.tr,
       'price': '\$20.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 4',
+      'name': 'Product 4'.tr,
       'price': '\$25.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 5',
+      'name': 'Product 5'.tr,
       'price': '\$30.00',
     },
     {
@@ -92,7 +94,7 @@ class _NormalState extends State<Normal> {
       backgroundColor: const Color(0xffCABA99),
       appBar: AppBar(
         backgroundColor: const Color(0xffCABA99),
-        title: const Text('Normal Category'),
+        title: Text('Normal Category'.tr),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -148,8 +150,8 @@ class _NormalState extends State<Normal> {
                                           child: Container(
                                             padding: const EdgeInsets.symmetric(
                                                 horizontal: 8, vertical: 4),
-                                            child: const Text(
-                                              '000000',
+                                            child: Text(
+                                              '000000'.tr,
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 16,
@@ -178,8 +180,8 @@ class _NormalState extends State<Normal> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      const Text(
-                                        'Some Detail',
+                                      Text(
+                                        'Some Detail'.tr,
                                         style: TextStyle(
                                             fontSize: 10, color: Colors.black),
                                       ),
@@ -190,8 +192,8 @@ class _NormalState extends State<Normal> {
                                       ),
                                     ],
                                   ),
-                                  const Text(
-                                    'More Info',
+                                  Text(
+                                    'More Info'.tr,
                                     style: TextStyle(
                                         fontSize: 10, color: Colors.black),
                                   ),
@@ -207,7 +209,7 @@ class _NormalState extends State<Normal> {
               ),
               ElevatedButton(
                 onPressed: _loadMoreProducts,
-                child: Text(_isExpanded ? 'Show Less' : 'Load More'),
+                child: Text(_isExpanded ? 'Show Less'.tr : 'Load More'.tr),
               ),
               const SizedBox(
                 height: 40,
@@ -222,15 +224,17 @@ class _NormalState extends State<Normal> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
             const SizedBox(
               width: 15,
             ),
             _buildBottomNavItem(
-                Icons.list, 'My List', 2, const CustomCardList()),
-            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
+                Icons.list, 'My List'.tr, 2, const CustomCardList()),
+            _buildBottomNavItem(
+                Icons.person, 'Account'.tr, 3, const MyAccount()),
           ],
         ),
       ),
@@ -273,8 +277,8 @@ class _NormalState extends State<Normal> {
             ),
           ),
           const SizedBox(height: 12),
-          const Text(
-            'Sell',
+          Text(
+            'Sell'.tr,
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/home.dart';
 import 'package:vehicle_project/Home/popular.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
@@ -21,42 +23,42 @@ class _GoldenState extends State<Golden> {
   final List<Map<String, String>> _allAvatarData = [
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 1',
+      'name': 'Product 1'.tr,
       'price': '\$10.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 2',
+      'name': 'Product 2'.tr,
       'price': '\$15.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 3',
+      'name': 'Product 3'.tr,
       'price': '\$20.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 4',
+      'name': 'Product 4'.tr,
       'price': '\$25.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 5',
+      'name': 'Product 5'.tr,
       'price': '\$30.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 6',
+      'name': 'Product 6'.tr,
       'price': '\$35.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 7',
+      'name': 'Product 7'.tr,
       'price': '\$40.00',
     },
     {
       'image': 'assets/images/qattar.jpg',
-      'name': 'Product 8',
+      'name': 'Product 8'.tr,
       'price': '\$45.00',
     },
   ];
@@ -92,7 +94,7 @@ class _GoldenState extends State<Golden> {
       backgroundColor: const Color(0xffCABA99),
       appBar: AppBar(
         backgroundColor: const Color(0xffCABA99),
-        title: const Text('Gold Category'),
+        title: Text('Gold Category'.tr),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -153,8 +155,8 @@ class _GoldenState extends State<Golden> {
                                           child: Container(
                                             padding: const EdgeInsets.symmetric(
                                                 horizontal: 8, vertical: 4),
-                                            child: const Text(
-                                              '000000',
+                                            child: Text(
+                                              '000000'.tr,
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 16,
@@ -183,8 +185,8 @@ class _GoldenState extends State<Golden> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      const Text(
-                                        'Some Detail',
+                                      Text(
+                                        'Some Detail'.tr,
                                         style: TextStyle(
                                             fontSize: 10, color: Colors.black),
                                       ),
@@ -195,8 +197,8 @@ class _GoldenState extends State<Golden> {
                                       ),
                                     ],
                                   ),
-                                  const Text(
-                                    'More Info',
+                                  Text(
+                                    'More Info'.tr,
                                     style: TextStyle(
                                         fontSize: 10, color: Colors.black),
                                   ),
@@ -212,7 +214,7 @@ class _GoldenState extends State<Golden> {
               ),
               ElevatedButton(
                 onPressed: _loadMoreProducts,
-                child: Text(_isExpanded ? 'Show Less' : 'Load More'),
+                child: Text(_isExpanded ? 'Show Less'.tr : 'Load More'.tr),
               ),
               const SizedBox(
                 height: 40,
@@ -227,15 +229,17 @@ class _GoldenState extends State<Golden> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
             const SizedBox(
               width: 15,
             ),
             _buildBottomNavItem(
-                Icons.list, 'My List', 2, const CustomCardList()),
-            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
+                Icons.list, 'My List'.tr, 2, const CustomCardList()),
+            _buildBottomNavItem(
+                Icons.person, 'Account'.tr, 3, const MyAccount()),
           ],
         ),
       ),
@@ -278,8 +282,8 @@ class _GoldenState extends State<Golden> {
             ),
           ),
           const SizedBox(height: 12),
-          const Text(
-            'Sell',
+          Text(
+            'Sell'.tr,
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],

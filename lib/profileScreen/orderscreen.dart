@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class Order extends StatefulWidget {
   const Order({super.key});
@@ -11,7 +12,7 @@ class _OrderState extends State<Order> {
   List<Map<String, String>> items = [
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Private plate 195700",
+      "title": "Private plate 195700".tr,
       "ID": "ID 11150",
       "sellername": "Malik",
       "buyerName": "Haroon",
@@ -21,7 +22,7 @@ class _OrderState extends State<Order> {
     },
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Private plate 195701",
+      "title": "Private plate 195700".tr,
       "ID": "ID 11151",
       "sellername": "Ahmed",
       "buyerName": "Usman",
@@ -31,7 +32,7 @@ class _OrderState extends State<Order> {
     },
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Private plate 195702",
+      "title": "Private plate 195700".tr,
       "ID": "ID 11152",
       "sellername": "Khan",
       "buyerName": "Ali",
@@ -55,8 +56,8 @@ class _OrderState extends State<Order> {
           Container(
             alignment: Alignment.topLeft,
             padding: const EdgeInsets.all(16.0),
-            child: const Text(
-              'Order History',
+            child: Text(
+              'Order History'.tr,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -115,7 +116,7 @@ class _OrderState extends State<Order> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        items[index]["title"]!,
+                                        items[index]["title"]!.tr,
                                         style: const TextStyle(
                                           fontSize: 13,
                                           fontWeight: FontWeight.bold,
@@ -131,14 +132,16 @@ class _OrderState extends State<Order> {
                                       const SizedBox(width: 10),
                                       const SizedBox(height: 5),
                                       Text(
-                                        "Seller: ${items[index]["sellername"]}",
+                                        "Seller: ${items[index]["Sellername"]}"
+                                            .tr,
                                         style: const TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
                                       Text(
-                                        "Buyer: ${items[index]["buyerName"]}",
+                                        "Buyer: ${items[index]["BuyerName"]}"
+                                            .tr,
                                         style: const TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold,
@@ -146,7 +149,7 @@ class _OrderState extends State<Order> {
                                       ),
                                       const SizedBox(height: 5),
                                       Text(
-                                        "Date: ${items[index]["date"]}",
+                                        "Date: ${items[index]["Date"]}".tr,
                                         style: const TextStyle(
                                           fontSize: 11,
                                         ),
@@ -164,7 +167,7 @@ class _OrderState extends State<Order> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "Price: ${items[index]["price"]}",
+                                "Price: ${items[index]["Price"]}".tr,
                                 style: const TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.bold,
@@ -183,7 +186,7 @@ class _OrderState extends State<Order> {
                                   ),
                                 ),
                                 child: Text(
-                                  "Status: ${items[index]["order"]}",
+                                  "Status: ${items[index]["order"]}".tr,
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 12,

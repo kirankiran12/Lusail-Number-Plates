@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
@@ -54,7 +55,7 @@ class _RequestState extends State<Request> {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
+              Text(
                 'Pending....',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -70,8 +71,9 @@ class _RequestState extends State<Request> {
                   border: Border.all(color: Colors.black),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Text(
-                  'This may take some time.Please be patient. Your request will be accepted within 24 hours.',
+                child: Text(
+                  'This may take some time.Please be patient. Your request will be accepted within 24 hours.'
+                      .tr,
                   textAlign: TextAlign.center, // Align text in the center
                   style: TextStyle(fontSize: 14),
                 ),
@@ -86,12 +88,14 @@ class _RequestState extends State<Request> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.list, 'My List', 2, const CustomCardList()),
-            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
+            _buildBottomNavItem(
+                Icons.list, 'My List'.tr, 2, const CustomCardList()),
+            _buildBottomNavItem(
+                Icons.person, 'Account'.tr, 3, const MyAccount()),
           ],
         ),
       ),
@@ -127,8 +131,8 @@ class _RequestState extends State<Request> {
             ),
           ),
           const SizedBox(height: 12),
-          const Text(
-            'Sell',
+          Text(
+            'Sell'.tr,
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],

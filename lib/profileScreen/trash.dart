@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:vehicle_project/Home/popular.dart';
 import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
@@ -20,10 +21,10 @@ class _TrashState extends State<TrashScreen> {
   Color statusColor = Colors.black;
 
   final List<String> cardTitles = [
-    'New\nOrders',
-    'Inn\nProcess',
-    'Delivery',
-    'Total\nDelivered',
+    'New\nOrders'.tr,
+    'Inn\nProcess'.tr,
+    'Delivery'.tr,
+    'Total\nDelivered'.tr,
   ];
 
   final List<String> cardPrices = [
@@ -44,7 +45,7 @@ class _TrashState extends State<TrashScreen> {
       backgroundColor: const Color(0xffCABA99),
       appBar: AppBar(
         backgroundColor: const Color(0xffCABA99),
-        title: const Text('MeTrash'),
+        title: Text('MeTrash'.tr),
         elevation: 0,
       ),
       body: Center(
@@ -121,13 +122,13 @@ class _TrashState extends State<TrashScreen> {
               const Divider(
                 color: Colors.black,
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 16.0, top: 5.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      'Latest Orders',
+                      'Latest Orders'.tr,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -166,11 +167,11 @@ class _TrashState extends State<TrashScreen> {
                               ),
                             ),
                             const SizedBox(width: 10),
-                            const Column(
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Private Plate 195700',
+                                  'Private Plate 195700'.tr,
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
@@ -188,11 +189,11 @@ class _TrashState extends State<TrashScreen> {
                             ),
                           ],
                         ),
-                        const Positioned(
+                        Positioned(
                           top: 20,
                           left: 90,
                           child: Text(
-                            'Sold',
+                            'Sold'.tr,
                             style: TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
@@ -222,12 +223,12 @@ class _TrashState extends State<TrashScreen> {
                                 builder: (context) {
                                   return AlertDialog(
                                     backgroundColor: const Color(0xffCABA99),
-                                    title: const Text('Select Status'),
+                                    title: Text('Select Status'.tr),
                                     content: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         ListTile(
-                                          title: const Text('Paid'),
+                                          title: Text('Paid'.tr),
                                           onTap: () {
                                             setState(() {
                                               status = 'Paid';
@@ -237,7 +238,7 @@ class _TrashState extends State<TrashScreen> {
                                           },
                                         ),
                                         ListTile(
-                                          title: const Text('Unpaid'),
+                                          title: Text('Unpaid'.tr),
                                           onTap: () {
                                             setState(() {
                                               status = 'Unpaid';
@@ -247,7 +248,7 @@ class _TrashState extends State<TrashScreen> {
                                           },
                                         ),
                                         ListTile(
-                                          title: const Text('Pending'),
+                                          title: Text('Pending'.tr),
                                           onTap: () {
                                             setState(() {
                                               status = 'Pending';
@@ -262,7 +263,7 @@ class _TrashState extends State<TrashScreen> {
                                 },
                               );
                             },
-                            child: const Text('Success'),
+                            child: Text('Success'.tr),
                           ),
                         ),
                         Positioned(
@@ -292,15 +293,16 @@ class _TrashState extends State<TrashScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
             _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat', 1, RealChat()),
+                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
             InkWell(
                 child: _buildBottomNavItem(
-                    Icons.list, 'My List', 2, const CustomCardList())),
+                    Icons.list, 'My List'.tr, 2, const CustomCardList())),
             _buildBottomNavItem(
               Icons.person,
-              'Account',
+              'Account'.tr,
               3,
               const MyAccount(),
             ),
@@ -337,8 +339,8 @@ class _TrashState extends State<TrashScreen> {
                 ),
               )),
           const SizedBox(height: 12),
-          const Text(
-            'Sell',
+          Text(
+            'Sell'.tr,
             style: TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],

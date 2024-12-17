@@ -101,7 +101,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
             ),
             const SizedBox(height: 8),
             Text(
-              'Sports car | Number plate'.tr.tr,
+              'Sports car | Number plate'.tr,
               style: const TextStyle(
                 fontSize: 18,
                 color: Colors.black,
@@ -217,8 +217,8 @@ class _DetailDescriptionState extends State<DetailDescription> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Haroon Rasheed',
+                    Text(
+                      'Haroon Rasheed'.tr,
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.black,
@@ -226,8 +226,8 @@ class _DetailDescriptionState extends State<DetailDescription> {
                       ),
                     ),
                     const SizedBox(height: 4),
-                    const Text(
-                      'Joined in January 2023',
+                    Text(
+                      'Joined in January 2023'.tr,
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.black,
@@ -237,8 +237,8 @@ class _DetailDescriptionState extends State<DetailDescription> {
                       height: 2,
                     ),
                     Row(children: [
-                      const Text(
-                        'View Profile   ',
+                      Text(
+                        'View Profile   '.tr,
                         style: TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),

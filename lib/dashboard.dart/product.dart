@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class Product extends StatefulWidget {
   const Product({super.key});
@@ -94,8 +95,8 @@ class _ProductState extends State<Product> {
                     Navigator.pop(context);
                   },
                 ),
-                const Text(
-                  'Product',
+                Text(
+                  'Product'.tr,
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -125,7 +126,7 @@ class _ProductState extends State<Product> {
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
-                labelText: 'Search',
+                labelText: 'Search'.tr,
                 hintText: 'Search by Owner Name or ID',
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
@@ -148,42 +149,42 @@ class _ProductState extends State<Product> {
             ),
             padding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Text(
-                    'Item Id',
+                    'Item Id'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    'Picture',
+                    'Picture'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    'Owner Name',
+                    'Owner Name'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    'Plate No',
+                    'Plate No'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    '    Price',
+                    '    Price'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
-                    '     Delete',
+                    '     Delete'.tr,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
@@ -215,7 +216,7 @@ class _ProductState extends State<Product> {
                         children: [
                           Expanded(
                               child: Text(
-                            item['ID']!,
+                            item['ID']!.tr,
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 10),
                           )),
@@ -223,7 +224,7 @@ class _ProductState extends State<Product> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
-                                item['image']!,
+                                item['image']!.tr,
                                 height: 50,
                                 width: 30,
                                 fit: BoxFit.cover,
@@ -232,19 +233,19 @@ class _ProductState extends State<Product> {
                           ),
                           Expanded(
                               child: Text(
-                            item['OwnerName']!,
+                            item['OwnerName']!.tr,
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 10),
                           )),
                           Expanded(
                               child: Text(
-                            item['PlateNo']!,
+                            item['PlateNo']!.tr,
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 10),
                           )),
                           Expanded(
                               child: Text(
-                            item['Price']!,
+                            item['Price']!.tr,
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 10),
                           )),
@@ -279,8 +280,8 @@ class _ProductState extends State<Product> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               ),
-              child: const Text(
-                "Learn more",
+              child: Text(
+                "Learn more".tr,
                 style: TextStyle(fontSize: 12),
               ),
             ),

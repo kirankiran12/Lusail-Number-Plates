@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class PaymentDashboard extends StatefulWidget {
   const PaymentDashboard({super.key});
@@ -9,10 +10,10 @@ class PaymentDashboard extends StatefulWidget {
 
 class _PaymentDashboardScreenState extends State<PaymentDashboard> {
   final List<String> cardTitles = [
-    'Send',
-    'Receive',
-    'Pending',
-    'Remaining Balance',
+    'Send'.tr,
+    'Receive'.tr,
+    'Pending'.tr,
+    'Remaining Balance'.tr,
   ];
 
   final List<String> cardPrices = [
@@ -61,8 +62,8 @@ class _PaymentDashboardScreenState extends State<PaymentDashboard> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xffCABA99),
-        title: const Text(
-          'Payments',
+        title: Text(
+          'Payments'.tr,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         actions: [
@@ -92,7 +93,7 @@ class _PaymentDashboardScreenState extends State<PaymentDashboard> {
                 controller: searchController,
                 onChanged: _filterSearchResults,
                 decoration: InputDecoration(
-                  hintText: 'Search...',
+                  hintText: 'Search...'.tr,
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
@@ -140,7 +141,7 @@ class _PaymentDashboardScreenState extends State<PaymentDashboard> {
                             height: 100,
                             child: Center(
                               child: Text(
-                                filteredPrices[index],
+                                filteredPrices[index].tr,
                                 style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
