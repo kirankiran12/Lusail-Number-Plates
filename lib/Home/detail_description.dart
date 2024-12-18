@@ -253,68 +253,66 @@ class _DetailDescriptionState extends State<DetailDescription> {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        notchMargin: 0.0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _buildBottomNavItem(
-                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
-            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat'.tr,
-                1, const RealChat()),
-            const SizedBox(
-              width: 15,
+        //notchMargin: 0.0,
+        color: Colors.white,
+        child: SizedBox(
+          height: 50,
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Expanded(
+              child: _buildBottomNavItem(
+                Icons.home,
+                'Home'.tr,
+                0,
+                const HomePageScreen(),
+              ),
             ),
-            _buildBottomNavItem(
-                Icons.list, 'My List'.tr, 2, const CustomCardList()),
-            _buildBottomNavItem(
-                Icons.person, 'Account'.tr, 3, const MyAccount()),
-          ],
+            Expanded(
+              child: _buildBottomNavItem(Icons.chat_bubble_outline_outlined,
+                  'Chat'.tr, 1, const RealChat()),
+            ),
+            SizedBox(
+              width: 50,
+            ),
+            Expanded(
+              child: _buildBottomNavItem(
+                  Icons.list, 'My List'.tr, 2, const CustomCardList()),
+            ),
+            Expanded(
+              child: _buildBottomNavItem(
+                  Icons.person, 'Account'.tr, 3, const MyAccount()),
+            ),
+          ]),
         ),
       ),
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                colors: [
-                  Colors.red,
-                  Color(0xFF3A1D6F),
-                  Color.fromARGB(255, 49, 4, 160),
-                  Color(0xFFAF121F),
-                  Colors.brown,
-                  Color(0xFFAF121F)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(top: 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Popular(),
+                  ),
+                );
+              },
+              backgroundColor: const Color(0xFFD9D9D9),
+              child: const Icon(Icons.add, color: Colors.black),
+            ),
+            const SizedBox(height: 4), // Adjusted spacing for visual alignment
+            Text(
+              'Sell'.tr,
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
               ),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: CircleAvatar(
-                radius: 28,
-                backgroundColor: const Color(0xFFD9D9D9),
-                child: IconButton(
-                  icon: const Icon(Icons.add, color: Colors.black),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Popular(),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 12),
-          const Text(
-            'Sell',
-            style: TextStyle(color: Colors.black, fontSize: 18),
-          ),
-        ],
+          ],
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

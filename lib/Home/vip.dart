@@ -107,7 +107,7 @@ class _VIPState extends State<VIP> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 8.0,
                   mainAxisSpacing: 8.0,
-                  childAspectRatio: 0.64,
+                  childAspectRatio: 0.62,
                 ),
                 itemCount: avatarData2.length,
                 itemBuilder: (context, index) {
@@ -219,68 +219,77 @@ class _VIPState extends State<VIP> {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        notchMargin: 1.0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _buildBottomNavItem(
-                Icons.home, 'Home'.tr, 0, const HomePageScreen()),
-            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat'.tr,
-                1, const RealChat()),
-            const SizedBox(
-              width: 15,
-            ),
-            _buildBottomNavItem(
-                Icons.list, 'My List'.tr, 2, const CustomCardList()),
-            _buildBottomNavItem(
-                Icons.person, 'Account'.tr, 3, const MyAccount()),
-          ],
-        ),
-      ),
-      floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                colors: [
-                  Colors.red,
-                  Color(0xFF3A1D6F),
-                  Color.fromARGB(255, 49, 4, 160),
-                  Color(0xFFAF121F),
-                  Colors.brown,
-                  Color(0xFFAF121F)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: CircleAvatar(
-                radius: 28,
-                backgroundColor: const Color(0xFFD9D9D9),
-                child: IconButton(
-                  icon: const Icon(Icons.add, color: Colors.black),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Popular(),
-                      ),
-                    );
-                  },
+        color: Colors.white,
+        child: SizedBox(
+          height: 50, // Adjusted height for proper alignment
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: _buildBottomNavItem(
+                  Icons.home,
+                  'Home'.tr,
+                  0,
+                  const HomePageScreen(),
                 ),
               ),
+              Expanded(
+                child: _buildBottomNavItem(
+                  Icons.chat_bubble_outline_outlined,
+                  'Chat'.tr,
+                  1,
+                  const RealChat(),
+                ),
+              ),
+              const SizedBox(width: 50), // Space for FAB
+              Expanded(
+                child: _buildBottomNavItem(
+                  Icons.list,
+                  'My List'.tr,
+                  2,
+                  const CustomCardList(),
+                ),
+              ),
+              Expanded(
+                child: _buildBottomNavItem(
+                  Icons.person,
+                  'Account'.tr,
+                  3,
+                  const MyAccount(),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(top: 20), // Adjusted to prevent overflow
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Popular(),
+                  ),
+                );
+              },
+              backgroundColor: const Color(0xFFD9D9D9),
+              child: const Icon(Icons.add, color: Colors.black),
             ),
-          ),
-          const SizedBox(height: 12),
-          Text(
-            'Sell'.tr,
-            style: const TextStyle(color: Colors.black, fontSize: 18),
-          ),
-        ],
+            const SizedBox(height: 4), // Adjusted spacing for visual alignment
+            Text(
+              'Sell'.tr,
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
@@ -291,25 +300,27 @@ class _VIPState extends State<VIP> {
     final isSelected = index == _currentIndex;
     return GestureDetector(
       onTap: () {
-        setState(() {
-          var currentIndex = index;
-        });
         if (page != null) {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => page));
+            context,
+            MaterialPageRoute(builder: (context) => page),
+          );
         }
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon,
-              color: isSelected ? const Color(0xff300F1C) : Colors.black),
+          Icon(
+            icon,
+            color: isSelected ? const Color(0xff300F1C) : Colors.grey,
+            size: 24,
+          ),
           Text(
             label,
             style: TextStyle(
-              color: isSelected ? const Color(0xff300F1C) : Colors.grey,
               fontSize: 12,
+              color: isSelected ? const Color(0xff300F1C) : Colors.grey,
             ),
           ),
         ],

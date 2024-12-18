@@ -47,8 +47,8 @@ class _RoleSelectorScreenState extends State<RoleSelectorScreen> {
               'Seller'.tr, // Translated: "Seller"
               style: TextStyle(
                 fontSize: 24,
-                color: selectedRole == 'Seller' ? Colors.blue : Colors.black,
-                fontWeight: selectedRole == 'Seller'
+                color: selectedRole == 'Seller'.tr ? Colors.blue : Colors.black,
+                fontWeight: selectedRole == 'Seller'.tr
                     ? FontWeight.bold
                     : FontWeight.normal,
               ),
@@ -59,10 +59,9 @@ class _RoleSelectorScreenState extends State<RoleSelectorScreen> {
             selectedRole.isEmpty
                 ? 'Please select a role'
                     .tr // Translated: "Please select a role"
-                : 'You selected: $selectedRole'
-                    .tr, // Translated: "You selected: $selectedRole"
+                : 'You selected: ${selectedRole == 'Seller' ? 'Seller'.tr : 'Buyer'.tr}', // Translated dynamic message
             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
+          )
         ],
       ),
     );

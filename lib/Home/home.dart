@@ -45,11 +45,11 @@ class _HomePageScreenState extends State<HomePageScreen> {
   Widget build(BuildContext context) {
     // Use Directionality to handle Arabic text direction
     return Directionality(
-      textDirection: Get.locale?.languageCode == 'ar'
-          ? TextDirection.rtl
-          : TextDirection.ltr,
-      child: MaterialApp(
-        home: Scaffold(
+        textDirection: Get.locale?.languageCode == 'ar'
+            ? TextDirection.rtl
+            : TextDirection.ltr,
+        child: MaterialApp(
+            home: Scaffold(
           backgroundColor: const Color(0xffCABA99),
           body: SafeArea(
             child: SingleChildScrollView(
@@ -122,7 +122,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
             shape: const CircularNotchedRectangle(),
             color: Colors.white,
             child: SizedBox(
-              height: 60, // Adjusted height for proper alignment
+              height: 50, // Adjusted height for proper alignment
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -163,38 +163,40 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
             ),
           ),
-          floatingActionButton: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              FloatingActionButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Popular(),
-                    ),
-                  );
-                },
-                backgroundColor: const Color(0xFFD9D9D9),
-                child: const Icon(Icons.add, color: Colors.black),
-              ),
-              const SizedBox(
-                  height: 4), // Adjusted spacing for visual alignment
-              Text(
-                'Sell'.tr,
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+          floatingActionButton: Padding(
+            padding:
+                const EdgeInsets.only(top: 20), // Adjusted to prevent overflow
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Popular(),
+                      ),
+                    );
+                  },
+                  backgroundColor: const Color(0xFFD9D9D9),
+                  child: const Icon(Icons.add, color: Colors.black),
                 ),
-              ),
-            ],
+                const SizedBox(
+                    height: 4), // Adjusted spacing for visual alignment
+                Text(
+                  'Sell'.tr,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
-        ),
-      ),
-    );
+        )));
   }
 
   Widget _buildBottomNavItem(
