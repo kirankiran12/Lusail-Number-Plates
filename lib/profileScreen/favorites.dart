@@ -151,7 +151,7 @@ class _FavoritesState extends State<Favorites> {
                                                 horizontal: 8, vertical: 4),
                                             child: Text(
                                               '000000'.tr,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.bold,
@@ -181,7 +181,7 @@ class _FavoritesState extends State<Favorites> {
                                     children: [
                                       Text(
                                         'Some Detail'.tr,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 10, color: Colors.black),
                                       ),
                                       IconButton(
@@ -193,7 +193,7 @@ class _FavoritesState extends State<Favorites> {
                                   ),
                                   Text(
                                     'More Info'.tr,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 10, color: Colors.black),
                                   ),
                                 ],
@@ -225,8 +225,8 @@ class _FavoritesState extends State<Favorites> {
           children: [
             _buildBottomNavItem(
                 Icons.home, 'Home'.tr, 0, const HomePageScreen()),
-            _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
+            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat'.tr,
+                1, const RealChat()),
             const SizedBox(
               width: 15,
             ),
@@ -278,7 +278,7 @@ class _FavoritesState extends State<Favorites> {
           const SizedBox(height: 12),
           Text(
             'Sell'.tr,
-            style: TextStyle(color: Colors.black, fontSize: 18),
+            style: const TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],
       ),

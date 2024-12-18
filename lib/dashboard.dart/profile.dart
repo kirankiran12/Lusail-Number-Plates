@@ -105,32 +105,35 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               const SizedBox(height: 20),
               Text(
                 'Enter Your Name'.tr,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   hintText: 'Enter Your Name'.tr,
                 ),
               ),
               const SizedBox(height: 15),
               Text(
                 'Something About You'.tr,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 maxLines: 3,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   hintText: 'Write something about yourself'.tr,
                 ),
               ),
               const SizedBox(height: 15),
               Text(
                 'Gender'.tr,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               DropdownButtonFormField<String>(
@@ -155,51 +158,55 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               const SizedBox(height: 15),
               Text(
                 'Date of Birth'.tr,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   hintText: 'DD/MM/YYYY'.tr,
                 ),
               ),
               const SizedBox(height: 15),
               Text(
                 'Phone Number'.tr,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   hintText: 'Enter your phone number'.tr,
                 ),
               ),
               const SizedBox(height: 15),
               Text(
                 'Email'.tr,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   hintText: 'Enter your email'.tr,
                 ),
               ),
               const SizedBox(height: 15),
               Text(
                 'Bank Account'.tr,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 5),
               TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   hintText: 'Enter your bank account'.tr,
                 ),
               ),
@@ -213,11 +220,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     backgroundColor: Colors.black,
                   ),
                   child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 12.0, horizontal: 30.0),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 12.0, horizontal: 30.0),
                     child: Text(
                       'Save'.tr,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),

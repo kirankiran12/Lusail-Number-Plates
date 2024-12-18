@@ -92,7 +92,7 @@ class _UserState extends State<User> {
                 ),
                 Text(
                   'Users'.tr,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
@@ -150,37 +150,43 @@ class _UserState extends State<User> {
                 Expanded(
                   child: Text(
                     'UserId'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     'Picture'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     'Name'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     'Email'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     '     Edit'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     '     Delete'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
               ],
@@ -280,7 +286,7 @@ class _UserState extends State<User> {
               ),
               child: Text(
                 "Learn more".tr,
-                style: TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 12),
               ),
             ),
           ),

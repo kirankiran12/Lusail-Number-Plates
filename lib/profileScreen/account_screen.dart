@@ -233,7 +233,7 @@ class _MyAccountState extends State<MyAccount> {
                         return AlertDialog(
                           title: Text(
                             'Logout Confirmation'.tr,
-                            style: TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 20),
                           ),
                           content: Text('Are you sure you want to logout?'.tr),
                           actions: [
@@ -261,16 +261,16 @@ class _MyAccountState extends State<MyAccount> {
                     );
                   },
                   child: ListTile(
-                    leading: Icon(Icons.logout_outlined),
+                    leading: const Icon(Icons.logout_outlined),
                     title: Text(
                       'Logout'.tr,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
                     ),
-                    trailing: Icon(Icons.arrow_forward_ios),
+                    trailing: const Icon(Icons.arrow_forward_ios),
                   ),
                 )
               ],

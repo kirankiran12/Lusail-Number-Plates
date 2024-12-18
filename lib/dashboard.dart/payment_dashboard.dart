@@ -64,7 +64,7 @@ class _PaymentDashboardScreenState extends State<PaymentDashboard> {
         backgroundColor: const Color(0xffCABA99),
         title: Text(
           'Payments'.tr,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(

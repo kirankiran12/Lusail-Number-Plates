@@ -96,7 +96,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   opacity: _fadeAnimation,
                   child: Text(
                     'Welcome'.tr,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
@@ -128,7 +128,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   '"Welcome to Lusail Numbers - Your gateway to exclusive car plates in Qatar!"'
                       .tr,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.black,
                   ),

@@ -33,9 +33,9 @@ class _PlanScreenState extends State<PlanScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffffCABA99),
+      backgroundColor: const Color(0xffffcaba99),
       appBar: AppBar(
-        backgroundColor: const Color(0xffffCABA99),
+        backgroundColor: const Color(0xffffcaba99),
         title: Text('subscription_plans'.tr),
       ),
       body: Padding(

@@ -77,7 +77,7 @@ class _NumberScreenState extends State<NumberScreen> {
         backgroundColor: const Color(0xffCABA99),
         title: Text(
           'Number Transfer'.tr,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(

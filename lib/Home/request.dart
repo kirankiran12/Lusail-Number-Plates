@@ -55,7 +55,7 @@ class _RequestState extends State<Request> {
                 ),
               ),
               const SizedBox(height: 20),
-              Text(
+              const Text(
                 'Pending....',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -75,7 +75,7 @@ class _RequestState extends State<Request> {
                   'This may take some time.Please be patient. Your request will be accepted within 24 hours.'
                       .tr,
                   textAlign: TextAlign.center, // Align text in the center
-                  style: TextStyle(fontSize: 14),
+                  style: const TextStyle(fontSize: 14),
                 ),
               ),
             ],
@@ -90,8 +90,8 @@ class _RequestState extends State<Request> {
           children: [
             _buildBottomNavItem(
                 Icons.home, 'Home'.tr, 0, const HomePageScreen()),
-            _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
+            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat'.tr,
+                1, const RealChat()),
             _buildBottomNavItem(
                 Icons.list, 'My List'.tr, 2, const CustomCardList()),
             _buildBottomNavItem(
@@ -133,7 +133,7 @@ class _RequestState extends State<Request> {
           const SizedBox(height: 12),
           Text(
             'Sell'.tr,
-            style: TextStyle(color: Colors.black, fontSize: 18),
+            style: const TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],
       ),

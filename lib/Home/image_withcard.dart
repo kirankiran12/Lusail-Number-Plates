@@ -72,72 +72,75 @@ class _ImageWithTextOverlayState extends State<ImageWithTextOverlay> {
             ),
           ),
           const SizedBox(height: 5),
-          SizedBox(
-            height: 100,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: avatarData.map((data) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6),
-                    child: GestureDetector(
-                      onTap: () {
-                        // Navigate to respective screen based on the route
-                        switch (data['route']) {
-                          case 'normal':
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Normal(),
-                              ),
-                            );
-                            break;
-                          case 'silver':
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Silver(),
-                              ),
-                            );
-                            break;
-                          case 'gold':
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Golden(),
-                              ),
-                            );
-                            break;
-                          case 'vip':
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const VIP(),
-                              ),
-                            );
-                            break;
-                          default:
-                            // Handle any unexpected cases
-                            break;
-                        }
-                      },
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundImage: AssetImage(data['image']!),
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            data['name']!,
-                            style: const TextStyle(fontSize: 14),
-                          ),
-                        ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SizedBox(
+              height: 100,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: avatarData.map((data) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 6),
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigate to respective screen based on the route
+                          switch (data['route']) {
+                            case 'normal':
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Normal(),
+                                ),
+                              );
+                              break;
+                            case 'silver':
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Silver(),
+                                ),
+                              );
+                              break;
+                            case 'gold':
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Golden(),
+                                ),
+                              );
+                              break;
+                            case 'vip':
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const VIP(),
+                                ),
+                              );
+                              break;
+                            default:
+                              // Handle any unexpected cases
+                              break;
+                          }
+                        },
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              backgroundImage: AssetImage(data['image']!),
+                            ),
+                            const SizedBox(height: 6),
+                            Text(
+                              data['name']!,
+                              style: const TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  );
-                }).toList(),
+                    );
+                  }).toList(),
+                ),
               ),
             ),
           ),

@@ -80,7 +80,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     child: Text(
                       '000000'.tr,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black, // Text color
                         fontSize: 16, // Font size
                         fontWeight: FontWeight.bold,
@@ -164,7 +164,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RealChat(),
+                          builder: (context) => const RealChat(),
                         ));
                   },
                   style: TextButton.styleFrom(
@@ -219,7 +219,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
                   children: [
                     Text(
                       'Haroon Rasheed'.tr,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -228,7 +228,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
                     const SizedBox(height: 4),
                     Text(
                       'Joined in January 2023'.tr,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         color: Colors.black,
                       ),
@@ -239,7 +239,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
                     Row(children: [
                       Text(
                         'View Profile   '.tr,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                       const Icon(Icons.arrow_forward_ios_sharp)
@@ -259,8 +259,8 @@ class _DetailDescriptionState extends State<DetailDescription> {
           children: [
             _buildBottomNavItem(
                 Icons.home, 'Home'.tr, 0, const HomePageScreen()),
-            _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
+            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat'.tr,
+                1, const RealChat()),
             const SizedBox(
               width: 15,
             ),

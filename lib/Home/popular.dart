@@ -162,10 +162,10 @@ class _PopularState extends State<Popular> {
                   'Please enter a plate number'.tr),
               Row(
                 children: [
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Text(
                     'Issue Date'.tr,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),

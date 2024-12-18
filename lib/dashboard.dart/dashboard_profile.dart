@@ -69,7 +69,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         backgroundColor: const Color(0xffCABA99),
         title: Text(
           'Dashboard'.tr,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         actions: [
           IconButton(
@@ -116,7 +116,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     left: 60,
                     child: Text(
                       'Menu'.tr,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black, // Change text color for visibility
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -202,7 +202,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           children: [
             // Search Bar
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: TextField(
                 controller: searchController,
                 onChanged: _filterSearchResults,

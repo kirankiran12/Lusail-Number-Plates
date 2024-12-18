@@ -22,14 +22,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         translations: AppTranslations(),
-        locale: Locale('en', 'US'),
-        fallbackLocale: Locale('en', 'US'),
+        locale: const Locale('en', 'US'),
+        fallbackLocale: const Locale('en', 'US'),
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: DashboardScreen());
+        home: const DashboardScreen());
   }
 }

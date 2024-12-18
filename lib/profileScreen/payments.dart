@@ -110,13 +110,13 @@ class _PaymentState extends State<Payment> {
                 color: Colors.black,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 16.0, top: 5.0),
+                padding: const EdgeInsets.only(left: 16.0, top: 5.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
                       'Payment History'.tr,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
@@ -159,15 +159,15 @@ class _PaymentState extends State<Payment> {
                               children: [
                                 Text(
                                   'Private Plate 195700'.tr,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                SizedBox(height: 30),
+                                const SizedBox(height: 30),
                                 Text(
                                   'Monday, 11 November \n2024(GMT-5)'.tr,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 10,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -181,7 +181,7 @@ class _PaymentState extends State<Payment> {
                           left: 95,
                           child: Text(
                             'Sold'.tr,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
@@ -193,7 +193,7 @@ class _PaymentState extends State<Payment> {
                           left: 95,
                           child: Text(
                             '50,000 Q.T'.tr,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
@@ -282,8 +282,8 @@ class _PaymentState extends State<Payment> {
           children: [
             _buildBottomNavItem(
                 Icons.home, 'Home'.tr, 0, const HomePageScreen()),
-            _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
+            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat'.tr,
+                1, const RealChat()),
             _buildBottomNavItem(Icons.list, 'My List'.tr, 2, null),
             _buildBottomNavItem(
               Icons.person,
@@ -326,7 +326,7 @@ class _PaymentState extends State<Payment> {
           const SizedBox(height: 12),
           Text(
             'Sell'.tr,
-            style: TextStyle(color: Colors.black, fontSize: 18),
+            style: const TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],
       ),

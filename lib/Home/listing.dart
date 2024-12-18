@@ -50,7 +50,7 @@ class _CustomCardListState extends State<CustomCardList> {
               alignment: Alignment.topLeft,
               child: Text(
                 '   My Listing'.tr,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
@@ -73,7 +73,7 @@ class _CustomCardListState extends State<CustomCardList> {
                 ),
                 child: Text(
                   "All lists ".tr,
-                  style: TextStyle(color: Colors.white, fontSize: 12),
+                  style: const TextStyle(color: Colors.white, fontSize: 12),
                 ),
               ),
             ),
@@ -186,36 +186,36 @@ class _CustomCardListState extends State<CustomCardList> {
                             children: [
                               Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.remove_red_eye_outlined,
                                     size: 16,
                                     color: Colors.black,
                                   ),
-                                  SizedBox(width: 4),
+                                  const SizedBox(width: 4),
                                   Text(
                                     '108 views'.tr,
-                                    style: TextStyle(fontSize: 12),
+                                    style: const TextStyle(fontSize: 12),
                                   ),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.person,
                                     size: 16,
                                     color: Colors.black,
                                   ),
-                                  SizedBox(width: 4),
+                                  const SizedBox(width: 4),
                                   Text(
                                     '7 leads'.tr,
-                                    style: TextStyle(fontSize: 12),
+                                    style: const TextStyle(fontSize: 12),
                                   ),
                                 ],
                               ),
                               Text(
                                 'Pending'.tr,
-                                style:
-                                    TextStyle(fontSize: 12, color: Colors.red),
+                                style: const TextStyle(
+                                    fontSize: 12, color: Colors.red),
                               ),
                             ],
                           ),
@@ -257,7 +257,7 @@ class _CustomCardListState extends State<CustomCardList> {
                                 ),
                                 child: Text(
                                   "Delete".tr,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.white, fontSize: 12),
                                 ),
                               ),
@@ -284,8 +284,8 @@ class _CustomCardListState extends State<CustomCardList> {
           children: [
             _buildBottomNavItem(
                 Icons.home, 'Home'.tr, 0, const HomePageScreen()),
-            _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
+            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat'.tr,
+                1, const RealChat()),
             const SizedBox(
               width: 15,
             ),
@@ -337,7 +337,7 @@ class _CustomCardListState extends State<CustomCardList> {
           const SizedBox(height: 12),
           Text(
             'Sell'.tr,
-            style: TextStyle(color: Colors.black, fontSize: 18),
+            style: const TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],
       ),

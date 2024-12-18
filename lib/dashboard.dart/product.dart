@@ -97,7 +97,7 @@ class _ProductState extends State<Product> {
                 ),
                 Text(
                   'Product'.tr,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
@@ -155,37 +155,43 @@ class _ProductState extends State<Product> {
                 Expanded(
                   child: Text(
                     'Item Id'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     'Picture'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     'Owner Name'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     'Plate No'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     '    Price'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
                 Expanded(
                   child: Text(
                     '     Delete'.tr,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ),
               ],
@@ -282,7 +288,7 @@ class _ProductState extends State<Product> {
               ),
               child: Text(
                 "Learn more".tr,
-                style: TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 12),
               ),
             ),
           ),

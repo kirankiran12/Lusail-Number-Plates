@@ -14,9 +14,9 @@ class _RealChatState extends State<RealChat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffCABA99),
+      backgroundColor: const Color(0xffffcaba99),
       appBar: AppBar(
-        backgroundColor: Color(0xffffCABA99),
+        backgroundColor: const Color(0xffffcaba99),
         title: Text('Chat Screen'.tr),
         actions: [
           IconButton(
@@ -53,14 +53,14 @@ class _RealChatState extends State<RealChat> {
                         margin: const EdgeInsets.symmetric(vertical: 5.0),
                         padding: const EdgeInsets.all(15.0),
                         decoration: BoxDecoration(
-                          color: Color(0xffffCABA99),
+                          color: const Color(0xffffcaba99),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Row(
                           children: [
                             CircleAvatar(
                               radius: 25.0,
-                              backgroundColor: Color(0xffFFD200),
+                              backgroundColor: const Color(0xffFFD200),
                               child: Text(
                                 'U${index + 1}'.tr,
                                 style: const TextStyle(color: Colors.white),
@@ -123,7 +123,7 @@ class _RealChatState extends State<RealChat> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PlanScreen(),
+                    builder: (context) => const PlanScreen(),
                   ));
             },
             child: Text('Upgrade'.tr),
@@ -142,9 +142,9 @@ class ChatDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffCABA99),
+      backgroundColor: const Color(0xfffcaba99),
       appBar: AppBar(
-        backgroundColor: Color(0xffffCABA99),
+        backgroundColor: const Color(0xffffcaba99),
         title: Text(user),
         actions: [
           IconButton(
@@ -172,14 +172,14 @@ class ChatDetailPage extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xfffCABA99),
+            color: const Color(0xfffcaba99),
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      fillColor: Color(0xfffCABA99),
+                      fillColor: const Color(0xfffcaba99),
                       filled: true,
                       hintText: 'Type your message...'.tr,
                       border: OutlineInputBorder(
@@ -194,7 +194,7 @@ class ChatDetailPage extends StatelessWidget {
                 ),
                 const SizedBox(width: 10.0),
                 CircleAvatar(
-                  backgroundColor: Color(0xffFFD200),
+                  backgroundColor: const Color(0xffFFD200),
                   child: IconButton(
                     icon: const Icon(Icons.send, color: Colors.black),
                     onPressed: () {
@@ -228,7 +228,7 @@ class ChatDetailPage extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PlanScreen(),
+                    builder: (context) => const PlanScreen(),
                   ));
               // Handle upgrade logic here
             },

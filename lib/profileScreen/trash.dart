@@ -123,13 +123,13 @@ class _TrashState extends State<TrashScreen> {
                 color: Colors.black,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 16.0, top: 5.0),
+                padding: const EdgeInsets.only(left: 16.0, top: 5.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
                       'Latest Orders'.tr,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
@@ -172,13 +172,13 @@ class _TrashState extends State<TrashScreen> {
                               children: [
                                 Text(
                                   'Private Plate 195700'.tr,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                SizedBox(height: 28),
-                                Text(
+                                const SizedBox(height: 28),
+                                const Text(
                                   'Monday, 11 November \n2024(GMT-5)',
                                   style: TextStyle(
                                     fontSize: 10,
@@ -194,7 +194,7 @@ class _TrashState extends State<TrashScreen> {
                           left: 90,
                           child: Text(
                             'Sold'.tr,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
@@ -295,8 +295,8 @@ class _TrashState extends State<TrashScreen> {
           children: [
             _buildBottomNavItem(
                 Icons.home, 'Home'.tr, 0, const HomePageScreen()),
-            _buildBottomNavItem(
-                Icons.chat_bubble_outline_outlined, 'Chat'.tr, 1, RealChat()),
+            _buildBottomNavItem(Icons.chat_bubble_outline_outlined, 'Chat'.tr,
+                1, const RealChat()),
             InkWell(
                 child: _buildBottomNavItem(
                     Icons.list, 'My List'.tr, 2, const CustomCardList())),
@@ -341,7 +341,7 @@ class _TrashState extends State<TrashScreen> {
           const SizedBox(height: 12),
           Text(
             'Sell'.tr,
-            style: TextStyle(color: Colors.black, fontSize: 18),
+            style: const TextStyle(color: Colors.black, fontSize: 18),
           ),
         ],
       ),

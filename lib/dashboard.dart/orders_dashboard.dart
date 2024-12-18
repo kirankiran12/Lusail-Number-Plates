@@ -90,7 +90,7 @@ class _OrderScreenState extends State<OrderScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xffCABA99),
-        title: Text(
+        title: const Text(
           'Orders',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
@@ -204,43 +204,43 @@ class _OrderScreenState extends State<OrderScreen> {
                   Expanded(
                     child: Text(
                       'UserId'.tr,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
                       'Picture'.tr,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
                       'Name'.tr,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
                       'Email'.tr,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
                       '   Edit'.tr,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                   Expanded(
                     child: Text(
                       '  Delete'.tr,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                   ),
                 ],
@@ -361,7 +361,7 @@ class _OrderScreenState extends State<OrderScreen> {
                 ),
                 child: Text(
                   'Load More'.tr,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             ),

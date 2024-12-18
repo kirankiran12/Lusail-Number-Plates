@@ -27,7 +27,7 @@ class NotificationsScreen extends StatelessWidget {
             title: Text(notifications[index], textDirection: TextDirection.rtl),
             subtitle: Text(
               'just_now'.tr,
-              style: TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey),
               textDirection: TextDirection.rtl,
             ),
             contentPadding:

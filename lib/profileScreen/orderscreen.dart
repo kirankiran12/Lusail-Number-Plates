@@ -58,7 +58,7 @@ class _OrderState extends State<Order> {
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'Order History'.tr,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),

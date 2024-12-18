@@ -72,7 +72,7 @@ class _CustomCardHomeState extends State<CustomCardHome> {
                                 bottom: 10,
                                 child: Text(
                                   '000000'.tr, // Replace with your dummy text
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: Colors
                                         .black, // Text color (white for visibility on dark images)
                                     fontSize: 10,
@@ -102,8 +102,8 @@ class _CustomCardHomeState extends State<CustomCardHome> {
                           children: [
                             Text(
                               'Some Detail'.tr,
-                              style:
-                                  TextStyle(fontSize: 10, color: Colors.black),
+                              style: const TextStyle(
+                                  fontSize: 10, color: Colors.black),
                             ),
                             IconButton(
                               icon: const Icon(Icons.favorite_border,
@@ -114,7 +114,8 @@ class _CustomCardHomeState extends State<CustomCardHome> {
                         ),
                         Text(
                           'More Info'.tr,
-                          style: TextStyle(fontSize: 10, color: Colors.black),
+                          style: const TextStyle(
+                              fontSize: 10, color: Colors.black),
                         ),
                       ],
                     ),
