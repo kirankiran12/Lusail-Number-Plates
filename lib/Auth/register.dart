@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+import 'dart:io';
+
+>>>>>>> Stashed changes
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vehicle_project/Auth/loginscreen.dart';
@@ -11,16 +16,14 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
-  String selectedRole = ''; // Initially no role is selected.
+  String selectedRole = '';
 
-  // Role selection function
   void _selectRole(String role) {
     setState(() {
       selectedRole = role;
     });
   }
 
-  // Controllers
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -52,11 +55,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+<<<<<<< Updated upstream
                 const SizedBox(height: 50), // Add spacing at the top
                 Text(
                   '"Complete your detail to access exclusive plate number in Qatar"'
                       .tr, // Translated: "Complete your details to access exclusive plate numbers in Qatar"
                   style: const TextStyle(
+=======
+                const SizedBox(height: 50),
+                const Text(
+                  '"Complete your detail to access exclusive plate number in Qatar"',
+                  style: TextStyle(
+>>>>>>> Stashed changes
                     fontSize: 16,
                     color: Colors.black,
                   ),
@@ -141,8 +151,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   return null;
                 }, obscureText: true),
                 const SizedBox(height: 20),
-
-                // Role Selection Section
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -209,7 +217,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
