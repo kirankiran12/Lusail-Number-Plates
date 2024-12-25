@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-=======
-import 'dart:io';
-
->>>>>>> Stashed changes
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vehicle_project/Auth/loginscreen.dart';
@@ -55,18 +50,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-<<<<<<< Updated upstream
-                const SizedBox(height: 50), // Add spacing at the top
-                Text(
-                  '"Complete your detail to access exclusive plate number in Qatar"'
-                      .tr, // Translated: "Complete your details to access exclusive plate numbers in Qatar"
-                  style: const TextStyle(
-=======
                 const SizedBox(height: 50),
                 const Text(
                   '"Complete your detail to access exclusive plate number in Qatar"',
                   style: TextStyle(
->>>>>>> Stashed changes
                     fontSize: 16,
                     color: Colors.black,
                   ),

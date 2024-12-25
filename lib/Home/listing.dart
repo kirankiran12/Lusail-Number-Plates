@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/get_utils.dart';
-import 'package:vehicle_project/Home/real_chat.dart';
 import 'package:vehicle_project/profileScreen/account_screen.dart';
 import 'package:vehicle_project/Home/chat_screen.dart';
 import 'package:vehicle_project/Home/home.dart';
@@ -18,21 +16,21 @@ class _CustomCardListState extends State<CustomCardList> {
   List<Map<String, String>> items = [
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Car No Plate".tr,
+      "title": "Car No Plate",
       "noplate": "500000Q.T",
-      "cartype": "SportCar".tr
+      "cartype": "SportCar"
     },
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Luxury Ride".tr,
+      "title": "Luxury Ride",
       "noplate": "700000Q.T",
-      "cartype": "Sedan".tr
+      "cartype": "Sedan"
     },
     {
       "image": "assets/images/qattar.jpg",
-      "title": "Car No Plate".tr,
+      "title": "Car No Plate",
       "noplate": "500000Q.T",
-      "cartype": "SportCar".tr
+      "cartype": "SportCar"
     },
   ];
 
@@ -48,9 +46,9 @@ class _CustomCardListState extends State<CustomCardList> {
             ),
             Container(
               alignment: Alignment.topLeft,
-              child: Text(
-                '   My Listing'.tr,
-                style: const TextStyle(
+              child: const Text(
+                '   My Listing',
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
@@ -71,9 +69,9 @@ class _CustomCardListState extends State<CustomCardList> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 ),
-                child: Text(
-                  "All lists ".tr,
-                  style: const TextStyle(color: Colors.white, fontSize: 12),
+                child: const Text(
+                  "All lists ",
+                  style: TextStyle(color: Colors.white, fontSize: 12),
                 ),
               ),
             ),
@@ -156,8 +154,7 @@ class _CustomCardListState extends State<CustomCardList> {
                                       ]),
                                       const SizedBox(height: 0),
                                       Text(
-                                        "No Plate: ${items[index]["noplate"]}"
-                                            .tr,
+                                        "No Plate: ${items[index]["noplate"]}",
                                         style: const TextStyle(
                                             fontSize: 13,
                                             color: Colors.black,
@@ -165,8 +162,7 @@ class _CustomCardListState extends State<CustomCardList> {
                                       ),
                                       const SizedBox(height: 10),
                                       Text(
-                                        "Car Type: ${items[index]["cartype"]}"
-                                            .tr,
+                                        "Car Type: ${items[index]["cartype"]}",
                                         style: const TextStyle(
                                             fontSize: 13,
                                             color: Colors.black,
@@ -181,41 +177,41 @@ class _CustomCardListState extends State<CustomCardList> {
                         ),
                         Container(
                           padding: const EdgeInsets.symmetric(vertical: 0.0),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Row(
                                 children: [
-                                  const Icon(
+                                  Icon(
                                     Icons.remove_red_eye_outlined,
                                     size: 16,
                                     color: Colors.black,
                                   ),
-                                  const SizedBox(width: 4),
+                                  SizedBox(width: 4),
                                   Text(
-                                    '108 views'.tr,
-                                    style: const TextStyle(fontSize: 12),
+                                    '108 views',
+                                    style: TextStyle(fontSize: 12),
                                   ),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  const Icon(
+                                  Icon(
                                     Icons.person,
                                     size: 16,
                                     color: Colors.black,
                                   ),
-                                  const SizedBox(width: 4),
+                                  SizedBox(width: 4),
                                   Text(
-                                    '7 leads'.tr,
-                                    style: const TextStyle(fontSize: 12),
+                                    '7 leads',
+                                    style: TextStyle(fontSize: 12),
                                   ),
                                 ],
                               ),
                               Text(
-                                'Pending'.tr,
-                                style: const TextStyle(
-                                    fontSize: 12, color: Colors.red),
+                                'Pending',
+                                style:
+                                    TextStyle(fontSize: 12, color: Colors.red),
                               ),
                             ],
                           ),
@@ -255,9 +251,9 @@ class _CustomCardListState extends State<CustomCardList> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
                                 ),
-                                child: Text(
-                                  "Delete".tr,
-                                  style: const TextStyle(
+                                child: const Text(
+                                  "Delete",
+                                  style: TextStyle(
                                       color: Colors.white, fontSize: 12),
                                 ),
                               ),
@@ -278,77 +274,66 @@ class _CustomCardListState extends State<CustomCardList> {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
-        color: Colors.white,
-        child: SizedBox(
-          height: 50, // Adjusted height for proper alignment
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: _buildBottomNavItem(
-                  Icons.home,
-                  'Home'.tr,
-                  0,
-                  const HomePageScreen(),
-                ),
-              ),
-              Expanded(
-                child: _buildBottomNavItem(
-                  Icons.chat_bubble_outline_outlined,
-                  'Chat'.tr,
-                  1,
-                  const RealChat(),
-                ),
-              ),
-              const SizedBox(width: 50), // Space for FAB
-              Expanded(
-                child: _buildBottomNavItem(
-                  Icons.list,
-                  'My List'.tr,
-                  2,
-                  const CustomCardList(),
-                ),
-              ),
-              Expanded(
-                child: _buildBottomNavItem(
-                  Icons.person,
-                  'Account'.tr,
-                  3,
-                  const MyAccount(),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(top: 20), // Adjusted to prevent overflow
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        notchMargin: 1.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            FloatingActionButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Popular(),
-                  ),
-                );
-              },
-              backgroundColor: const Color(0xFFD9D9D9),
-              child: const Icon(Icons.add, color: Colors.black),
+            _buildBottomNavItem(Icons.home, 'Home', 0, const HomePageScreen()),
+            _buildBottomNavItem(
+                Icons.chat_bubble_outline_outlined, 'Chat', 1, FaqScreen()),
+            const SizedBox(
+              width: 15,
             ),
-            const SizedBox(height: 4), // Adjusted spacing for visual alignment
-            Text(
-              'Sell'.tr,
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
+            _buildBottomNavItem(
+                Icons.list, 'My List', 2, const CustomCardList()),
+            _buildBottomNavItem(Icons.person, 'Account', 3, const MyAccount()),
           ],
         ),
+      ),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                colors: [
+                  Colors.red,
+                  Color(0xFF3A1D6F),
+                  Color.fromARGB(255, 49, 4, 160),
+                  Color(0xFFAF121F),
+                  Colors.brown,
+                  Color(0xFFAF121F)
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: CircleAvatar(
+                radius: 28,
+                backgroundColor: const Color(0xFFD9D9D9),
+                child: IconButton(
+                  icon: const Icon(Icons.add, color: Colors.black),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Popular(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          const Text(
+            'Sell',
+            style: TextStyle(color: Colors.black, fontSize: 18),
+          ),
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
@@ -359,27 +344,25 @@ class _CustomCardListState extends State<CustomCardList> {
     final isSelected = index == _currentIndex;
     return GestureDetector(
       onTap: () {
+        setState(() {
+          var currentIndex = index;
+        });
         if (page != null) {
           Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => page),
-          );
+              context, MaterialPageRoute(builder: (context) => page));
         }
       },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            color: isSelected ? const Color(0xff300F1C) : Colors.grey,
-            size: 24,
-          ),
+          Icon(icon,
+              color: isSelected ? const Color(0xff300F1C) : Colors.black),
           Text(
             label,
             style: TextStyle(
-              fontSize: 12,
               color: isSelected ? const Color(0xff300F1C) : Colors.grey,
+              fontSize: 12,
             ),
           ),
         ],
